@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.10.20)  26 OCT 2014 16:50
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.10.20)  26 OCT 2014 18:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -789,151 +789,119 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip50
 ))
-(./thesis.aux (./front.aux) (./problemstatement.aux) (./acknowledgements.aux)
-(./abstract.aux) (./introduction.aux) (./relatedwork.aux
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2013/08/25 v0.4v Insert pages of external PDF documents (AM)
 
-LaTeX Warning: Label `eq1' multiply defined.
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count120
+\calc@Bcount=\count121
+\calc@Adimen=\dimen139
+\calc@Bdimen=\dimen140
+\calc@Askip=\skip51
+\calc@Bskip=\skip52
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count122
+\calc@Cskip=\skip53
+)
+(/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2013/10/06 v2.0d eso-pic (RN)
 
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `tab1' multiply defined.
-
-
-LaTeX Warning: Label `fig2' multiply defined.
-
-) (./background.aux
-
-LaTeX Warning: Label `eq1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `tab1' multiply defined.
-
-
-LaTeX Warning: Label `fig2' multiply defined.
-
-) (./setupandmethodology.aux
-
-LaTeX Warning: Label `eq1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `tab1' multiply defined.
-
-
-LaTeX Warning: Label `fig2' multiply defined.
-
-) (./implementation.aux
-
-LaTeX Warning: Label `eq1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `tab1' multiply defined.
-
-
-LaTeX Warning: Label `fig2' multiply defined.
-
-) (./resultsanddiscussion.aux
-
-LaTeX Warning: Label `eq1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `tab1' multiply defined.
-
-
-LaTeX Warning: Label `fig2' multiply defined.
-
-) (./conslution.aux) (./futurework.aux
-
-LaTeX Warning: Label `eq1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `tab1' multiply defined.
-
-
-LaTeX Warning: Label `fig2' multiply defined.
-
-) (./acronyms.aux) (./appendix-b.aux) (./vitae.aux))
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box29
+\AM@toc@title=\toks24
+\c@AM@survey=\count123
+\AM@templatesizebox=\box30
+) (./thesis.aux
+(./front.aux) (./problemstatement.aux) (./acknowledgements.aux) (./abstract.aux
+) (./introduction.aux) (./relatedwork.aux) (./background.aux)
+(./setupandmethodology.aux) (./implementation.aux) (./resultsanddiscussion.aux)
+(./conclution.aux) (./futurework.aux) (./acronyms.aux) (./appendix-b.aux)
+(./vitae.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 17.
-LaTeX Font Info:    Try loading font information for FML+futm on input line 17.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 18.
+LaTeX Font Info:    Try loading font information for FML+futm on input line 18.
 
-
-(/usr/share/texlive/texmf-dist/tex/latex/fourier/fmlfutm.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 17.
-LaTeX Font Info:    Try loading font information for FMS+futm on input line 17.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 18.
+LaTeX Font Info:    Try loading font information for FMS+futm on input line 18.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 17.
-LaTeX Font Info:    Try loading font information for FMX+futm on input line 17.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 18.
+LaTeX Font Info:    Try loading font information for FMX+futm on input line 18.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 17.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 18.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Try loading font information for T1+futs on input line 17.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Try loading font information for T1+futs on input line 18.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/t1futs.fd
 File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count120
-\scratchdimen=\dimen139
-\scratchbox=\box29
-\nofMPsegments=\count121
-\nofMParguments=\count122
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count123
-\MPscratchDim=\dimen140
-\MPnumerator=\count124
-\makeMPintoPDFobject=\count125
-\everyMPtoPDFconversion=\toks25
+\scratchcounter=\count124
+\scratchdimen=\dimen141
+\scratchbox=\box31
+\nofMPsegments=\count125
+\nofMParguments=\count126
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count127
+\MPscratchDim=\dimen142
+\MPnumerator=\count128
+\makeMPintoPDFobject=\count129
+\everyMPtoPDFconversion=\toks26
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -983,28 +951,19 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box30
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
-)
-Package color Info: Driver file: pdftex.def on input line 130.
-)
-Package hyperref Info: Link coloring ON on input line 17.
-
+\AtBeginShipoutBox=\box32
+Package hyperref Info: Link coloring ON on input line 18.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count126
+\c@section@level=\count130
 )
-LaTeX Info: Redefining \ref on input line 17.
-LaTeX Info: Redefining \pageref on input line 17.
-LaTeX Info: Redefining \nameref on input line 17.
+LaTeX Info: Redefining \ref on input line 18.
+LaTeX Info: Redefining \pageref on input line 18.
+LaTeX Info: Redefining \nameref on input line 18.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write3
@@ -1013,11 +972,11 @@ LaTeX Info: Redefining \nameref on input line 17.
 \openout2 = `front.aux'.
 
  (./front.tex
-<fig/rams.pdf, id=264, 97.80238pt x 44.8345pt>
-File: fig/rams.pdf Graphic file (type pdf)
- <use fig/rams.pdf>
-Package pdftex.def Info: fig/rams.pdf used on input line 8.
-(pdftex.def)             Requested size: 107.58295pt x 49.31808pt.
+<fig/NTNU.pdf, id=87, 241.90375pt x 53.19875pt>
+File: fig/NTNU.pdf Graphic file (type pdf)
+ <use fig/NTNU.pdf>
+Package pdftex.def Info: fig/NTNU.pdf used on input line 8.
+(pdftex.def)             Requested size: 266.09494pt x 58.51878pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 8--10
 
@@ -1026,7 +985,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--10
 ) [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./fig/rams.pdf>]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./fig/NTNU.pdf>]
 \openout2 = `problemstatement.aux'.
 
 
@@ -1051,7 +1010,7 @@ LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <17.28> not available
 
 ]
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 27.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 28.
  (./thesis.toc
 LaTeX Font Info:    Try loading font information for FML+futmi on input line 1.
 
@@ -1075,7 +1034,7 @@ LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
 [4
 
 
-] [5])
+])
 \tf@toc=\write4
 \openout4 = `thesis.toc'.
 
@@ -1083,389 +1042,84 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.30 \include{introduction}
+l.31 \include{introduction}
                             [1]
 \openout2 = `introduction.aux'.
 
  (./introduction.tex
 Chapter 1.
-LaTeX Font Info:    Font shape `T1/futs/bx/it' in size <12> not available
-(Font)              Font shape `T1/futs/b/it' tried instead on input line 8.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 9.
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-Overfull \hbox (23.45486pt too wide) in paragraph at lines 14--15
-\T1/futs/m/n/12 Mathematical sym-bols and equa-tions can writ-ten in the text a
-s $\FML/futmi/m/it/12 ^^U$\T1/futs/m/n/12 , $\FML/futmi/m/it/12 F\T1/futs/m/n/1
-2 (\FML/futmi/m/it/12 t\T1/futs/m/n/12 )$, or even $\FML/futmi/m/it/12 F\T1/fut
-s/m/n/12 (\FML/futmi/m/it/12 t\T1/futs/m/n/12 ) \FMS/futm/m/n/12 Å [][] []\T1/f
-uts/m/n/12 (\FMS/futm/m/n/12 ^^@\FML/futmi/m/it/12 ^^Ux\T1/futs/m/n/12 ) \FML/f
-utmi/m/it/12 dx$\T1/futs/m/n/12 ,
- []
-
-[2
+) [2
 
 
 ]
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 29.
-LaTeX Font Info:    Try loading font information for U+mvs on input line 51.
- (/usr/share/texlive/texmf-dist/tex/latex/marvosym/umvs.fd)
-Underfull \hbox (badness 10000) in paragraph at lines 51--53
-
- []
-
-[3] <fig/NTNU.pdf, id=393, 241.90375pt x 53.19875pt>
-File: fig/NTNU.pdf Graphic file (type pdf)
- <use fig/NTNU.pdf>
-Package pdftex.def Info: fig/NTNU.pdf used on input line 64.
-(pdftex.def)             Requested size: 145.14336pt x 31.91948pt.
-
-Overfull \hbox (2.83617pt too wide) in paragraph at lines 72--73
-\T1/futs/m/n/12 de-clare the fig-ure, you may in-clude the com-mand \T1/cmtt/m/
-n/12 [h] \T1/futs/m/n/12 (here) im-me-di-ately af-ter $\FMS/futm/m/n/12 n$\T1/c
-mtt/m/n/12 begin{figure}\T1/futs/m/n/12 .
- []
-
-[4 <./fig/NTNU.pdf>]
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 74.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 74.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 74.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 74.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 74.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 74.
-File: fig/NTNU.pdf Graphic file (type pdf)
- <use fig/NTNU.pdf>
-Package pdftex.def Info: fig/NTNU.pdf used on input line 77.
-(pdftex.def)             Requested size: 435.4264pt x 95.75764pt.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 90.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 90.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 90.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 90.
-
-Overfull \hbox (5.74524pt too wide) in paragraph at lines 105--107
-\T1/futs/m/n/12 neath the com-mand $\FMS/futm/m/n/12 n$\T1/cmtt/m/n/12 includeg
-raphics \T1/futs/m/n/12 for fig-ures, and above the com-mand $\FMS/futm/m/n/12 
-n$\T1/cmtt/m/n/12 begin{tabular*}
- []
-
-[5] [6] [7]
-LaTeX Font Info:    Try loading font information for TS1+futs on input line 132
-.
- (/usr/share/texlive/texmf-dist/tex/latex/fourier/ts1futs.fd
-File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
-))
-[8]
 \openout2 = `relatedwork.aux'.
 
  (./relatedwork.tex
 Chapter 2.
-
-Overfull \hbox (23.45486pt too wide) in paragraph at lines 14--15
-\T1/futs/m/n/12 Mathematical sym-bols and equa-tions can writ-ten in the text a
-s $\FML/futmi/m/it/12 ^^U$\T1/futs/m/n/12 , $\FML/futmi/m/it/12 F\T1/futs/m/n/1
-2 (\FML/futmi/m/it/12 t\T1/futs/m/n/12 )$, or even $\FML/futmi/m/it/12 F\T1/fut
-s/m/n/12 (\FML/futmi/m/it/12 t\T1/futs/m/n/12 ) \FMS/futm/m/n/12 Å [][] []\T1/f
-uts/m/n/12 (\FMS/futm/m/n/12 ^^@\FML/futmi/m/it/12 ^^Ux\T1/futs/m/n/12 ) \FML/f
-utmi/m/it/12 dx$\T1/futs/m/n/12 ,
- []
-
-[9
+) [3
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 51--53
-
- []
-
-[10]
-File: fig/NTNU.pdf Graphic file (type pdf)
- <use fig/NTNU.pdf>
-Package pdftex.def Info: fig/NTNU.pdf used on input line 64.
-(pdftex.def)             Requested size: 145.14336pt x 31.91948pt.
-
-Overfull \hbox (2.83617pt too wide) in paragraph at lines 72--73
-\T1/futs/m/n/12 de-clare the fig-ure, you may in-clude the com-mand \T1/cmtt/m/
-n/12 [h] \T1/futs/m/n/12 (here) im-me-di-ately af-ter $\FMS/futm/m/n/12 n$\T1/c
-mtt/m/n/12 begin{figure}\T1/futs/m/n/12 .
- []
-
-[11]
-File: fig/NTNU.pdf Graphic file (type pdf)
- <use fig/NTNU.pdf>
-Package pdftex.def Info: fig/NTNU.pdf used on input line 77.
-(pdftex.def)             Requested size: 435.4264pt x 95.75764pt.
-
-Overfull \hbox (5.74524pt too wide) in paragraph at lines 105--107
-\T1/futs/m/n/12 neath the com-mand $\FMS/futm/m/n/12 n$\T1/cmtt/m/n/12 includeg
-raphics \T1/futs/m/n/12 for fig-ures, and above the com-mand $\FMS/futm/m/n/12 
-n$\T1/cmtt/m/n/12 begin{tabular*}
- []
-
-[12] [13] [14]) [15]
 \openout2 = `background.aux'.
 
  (./background.tex
 Chapter 3.
-
-Overfull \hbox (23.45486pt too wide) in paragraph at lines 14--15
-\T1/futs/m/n/12 Mathematical sym-bols and equa-tions can writ-ten in the text a
-s $\FML/futmi/m/it/12 ^^U$\T1/futs/m/n/12 , $\FML/futmi/m/it/12 F\T1/futs/m/n/1
-2 (\FML/futmi/m/it/12 t\T1/futs/m/n/12 )$, or even $\FML/futmi/m/it/12 F\T1/fut
-s/m/n/12 (\FML/futmi/m/it/12 t\T1/futs/m/n/12 ) \FMS/futm/m/n/12 Å [][] []\T1/f
-uts/m/n/12 (\FMS/futm/m/n/12 ^^@\FML/futmi/m/it/12 ^^Ux\T1/futs/m/n/12 ) \FML/f
-utmi/m/it/12 dx$\T1/futs/m/n/12 ,
- []
-
-[16
+) [4
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 51--53
-
- []
-
-[17]
-File: fig/NTNU.pdf Graphic file (type pdf)
- <use fig/NTNU.pdf>
-Package pdftex.def Info: fig/NTNU.pdf used on input line 64.
-(pdftex.def)             Requested size: 145.14336pt x 31.91948pt.
-
-Overfull \hbox (2.83617pt too wide) in paragraph at lines 72--73
-\T1/futs/m/n/12 de-clare the fig-ure, you may in-clude the com-mand \T1/cmtt/m/
-n/12 [h] \T1/futs/m/n/12 (here) im-me-di-ately af-ter $\FMS/futm/m/n/12 n$\T1/c
-mtt/m/n/12 begin{figure}\T1/futs/m/n/12 .
- []
-
-[18]
-File: fig/NTNU.pdf Graphic file (type pdf)
- <use fig/NTNU.pdf>
-Package pdftex.def Info: fig/NTNU.pdf used on input line 77.
-(pdftex.def)             Requested size: 435.4264pt x 95.75764pt.
-
-Overfull \hbox (5.74524pt too wide) in paragraph at lines 105--107
-\T1/futs/m/n/12 neath the com-mand $\FMS/futm/m/n/12 n$\T1/cmtt/m/n/12 includeg
-raphics \T1/futs/m/n/12 for fig-ures, and above the com-mand $\FMS/futm/m/n/12 
-n$\T1/cmtt/m/n/12 begin{tabular*}
- []
-
-[19] [20] [21]) [22]
 \openout2 = `setupandmethodology.aux'.
 
  (./setupandmethodology.tex
 Chapter 4.
-
-Overfull \hbox (23.45486pt too wide) in paragraph at lines 14--15
-\T1/futs/m/n/12 Mathematical sym-bols and equa-tions can writ-ten in the text a
-s $\FML/futmi/m/it/12 ^^U$\T1/futs/m/n/12 , $\FML/futmi/m/it/12 F\T1/futs/m/n/1
-2 (\FML/futmi/m/it/12 t\T1/futs/m/n/12 )$, or even $\FML/futmi/m/it/12 F\T1/fut
-s/m/n/12 (\FML/futmi/m/it/12 t\T1/futs/m/n/12 ) \FMS/futm/m/n/12 Å [][] []\T1/f
-uts/m/n/12 (\FMS/futm/m/n/12 ^^@\FML/futmi/m/it/12 ^^Ux\T1/futs/m/n/12 ) \FML/f
-utmi/m/it/12 dx$\T1/futs/m/n/12 ,
- []
-
-[23
+) [5
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 51--53
-
- []
-
-[24]
-File: fig/NTNU.pdf Graphic file (type pdf)
- <use fig/NTNU.pdf>
-Package pdftex.def Info: fig/NTNU.pdf used on input line 64.
-(pdftex.def)             Requested size: 145.14336pt x 31.91948pt.
-
-Overfull \hbox (2.83617pt too wide) in paragraph at lines 72--73
-\T1/futs/m/n/12 de-clare the fig-ure, you may in-clude the com-mand \T1/cmtt/m/
-n/12 [h] \T1/futs/m/n/12 (here) im-me-di-ately af-ter $\FMS/futm/m/n/12 n$\T1/c
-mtt/m/n/12 begin{figure}\T1/futs/m/n/12 .
- []
-
-[25]
-File: fig/NTNU.pdf Graphic file (type pdf)
- <use fig/NTNU.pdf>
-Package pdftex.def Info: fig/NTNU.pdf used on input line 77.
-(pdftex.def)             Requested size: 435.4264pt x 95.75764pt.
-
-Overfull \hbox (5.74524pt too wide) in paragraph at lines 105--107
-\T1/futs/m/n/12 neath the com-mand $\FMS/futm/m/n/12 n$\T1/cmtt/m/n/12 includeg
-raphics \T1/futs/m/n/12 for fig-ures, and above the com-mand $\FMS/futm/m/n/12 
-n$\T1/cmtt/m/n/12 begin{tabular*}
- []
-
-[26] [27] [28]) [29]
 \openout2 = `implementation.aux'.
 
  (./implementation.tex
 Chapter 5.
-
-Overfull \hbox (23.45486pt too wide) in paragraph at lines 14--15
-\T1/futs/m/n/12 Mathematical sym-bols and equa-tions can writ-ten in the text a
-s $\FML/futmi/m/it/12 ^^U$\T1/futs/m/n/12 , $\FML/futmi/m/it/12 F\T1/futs/m/n/1
-2 (\FML/futmi/m/it/12 t\T1/futs/m/n/12 )$, or even $\FML/futmi/m/it/12 F\T1/fut
-s/m/n/12 (\FML/futmi/m/it/12 t\T1/futs/m/n/12 ) \FMS/futm/m/n/12 Å [][] []\T1/f
-uts/m/n/12 (\FMS/futm/m/n/12 ^^@\FML/futmi/m/it/12 ^^Ux\T1/futs/m/n/12 ) \FML/f
-utmi/m/it/12 dx$\T1/futs/m/n/12 ,
- []
-
-[30
+) [6
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 51--53
-
- []
-
-[31]
-File: fig/NTNU.pdf Graphic file (type pdf)
- <use fig/NTNU.pdf>
-Package pdftex.def Info: fig/NTNU.pdf used on input line 64.
-(pdftex.def)             Requested size: 145.14336pt x 31.91948pt.
-
-Overfull \hbox (2.83617pt too wide) in paragraph at lines 72--73
-\T1/futs/m/n/12 de-clare the fig-ure, you may in-clude the com-mand \T1/cmtt/m/
-n/12 [h] \T1/futs/m/n/12 (here) im-me-di-ately af-ter $\FMS/futm/m/n/12 n$\T1/c
-mtt/m/n/12 begin{figure}\T1/futs/m/n/12 .
- []
-
-[32]
-File: fig/NTNU.pdf Graphic file (type pdf)
- <use fig/NTNU.pdf>
-Package pdftex.def Info: fig/NTNU.pdf used on input line 77.
-(pdftex.def)             Requested size: 435.4264pt x 95.75764pt.
-
-Overfull \hbox (5.74524pt too wide) in paragraph at lines 105--107
-\T1/futs/m/n/12 neath the com-mand $\FMS/futm/m/n/12 n$\T1/cmtt/m/n/12 includeg
-raphics \T1/futs/m/n/12 for fig-ures, and above the com-mand $\FMS/futm/m/n/12 
-n$\T1/cmtt/m/n/12 begin{tabular*}
- []
-
-[33] [34] [35]) [36]
 \openout2 = `resultsanddiscussion.aux'.
 
  (./resultsanddiscussion.tex
 Chapter 6.
-
-Overfull \hbox (23.45486pt too wide) in paragraph at lines 14--15
-\T1/futs/m/n/12 Mathematical sym-bols and equa-tions can writ-ten in the text a
-s $\FML/futmi/m/it/12 ^^U$\T1/futs/m/n/12 , $\FML/futmi/m/it/12 F\T1/futs/m/n/1
-2 (\FML/futmi/m/it/12 t\T1/futs/m/n/12 )$, or even $\FML/futmi/m/it/12 F\T1/fut
-s/m/n/12 (\FML/futmi/m/it/12 t\T1/futs/m/n/12 ) \FMS/futm/m/n/12 Å [][] []\T1/f
-uts/m/n/12 (\FMS/futm/m/n/12 ^^@\FML/futmi/m/it/12 ^^Ux\T1/futs/m/n/12 ) \FML/f
-utmi/m/it/12 dx$\T1/futs/m/n/12 ,
- []
-
-[37
+) [7
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 51--53
+\openout2 = `conclution.aux'.
 
- []
-
-[38]
-File: fig/NTNU.pdf Graphic file (type pdf)
- <use fig/NTNU.pdf>
-Package pdftex.def Info: fig/NTNU.pdf used on input line 64.
-(pdftex.def)             Requested size: 145.14336pt x 31.91948pt.
-
-Overfull \hbox (2.83617pt too wide) in paragraph at lines 72--73
-\T1/futs/m/n/12 de-clare the fig-ure, you may in-clude the com-mand \T1/cmtt/m/
-n/12 [h] \T1/futs/m/n/12 (here) im-me-di-ately af-ter $\FMS/futm/m/n/12 n$\T1/c
-mtt/m/n/12 begin{figure}\T1/futs/m/n/12 .
- []
-
-[39]
-File: fig/NTNU.pdf Graphic file (type pdf)
- <use fig/NTNU.pdf>
-Package pdftex.def Info: fig/NTNU.pdf used on input line 77.
-(pdftex.def)             Requested size: 435.4264pt x 95.75764pt.
-
-Overfull \hbox (5.74524pt too wide) in paragraph at lines 105--107
-\T1/futs/m/n/12 neath the com-mand $\FMS/futm/m/n/12 n$\T1/cmtt/m/n/12 includeg
-raphics \T1/futs/m/n/12 for fig-ures, and above the com-mand $\FMS/futm/m/n/12 
-n$\T1/cmtt/m/n/12 begin{tabular*}
- []
-
-[40] [41] [42]) [43]
-\openout2 = `conslution.aux'.
+ (./conclution.tex
+Chapter 7.
+) [8
 
 
-No file conslution.tex.
+
+]
 \openout2 = `futurework.aux'.
 
-(./futurework.tex
-Chapter 7.
-
-Overfull \hbox (23.45486pt too wide) in paragraph at lines 14--15
-\T1/futs/m/n/12 Mathematical sym-bols and equa-tions can writ-ten in the text a
-s $\FML/futmi/m/it/12 ^^U$\T1/futs/m/n/12 , $\FML/futmi/m/it/12 F\T1/futs/m/n/1
-2 (\FML/futmi/m/it/12 t\T1/futs/m/n/12 )$, or even $\FML/futmi/m/it/12 F\T1/fut
-s/m/n/12 (\FML/futmi/m/it/12 t\T1/futs/m/n/12 ) \FMS/futm/m/n/12 Å [][] []\T1/f
-uts/m/n/12 (\FMS/futm/m/n/12 ^^@\FML/futmi/m/it/12 ^^Ux\T1/futs/m/n/12 ) \FML/f
-utmi/m/it/12 dx$\T1/futs/m/n/12 ,
- []
-
-[44
-
-
+ (./futurework.tex
+Chapter 8.
+) [9
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 51--53
-
- []
-
-[45]
-File: fig/NTNU.pdf Graphic file (type pdf)
- <use fig/NTNU.pdf>
-Package pdftex.def Info: fig/NTNU.pdf used on input line 64.
-(pdftex.def)             Requested size: 145.14336pt x 31.91948pt.
-
-Overfull \hbox (2.83617pt too wide) in paragraph at lines 72--73
-\T1/futs/m/n/12 de-clare the fig-ure, you may in-clude the com-mand \T1/cmtt/m/
-n/12 [h] \T1/futs/m/n/12 (here) im-me-di-ately af-ter $\FMS/futm/m/n/12 n$\T1/c
-mtt/m/n/12 begin{figure}\T1/futs/m/n/12 .
- []
-
-[46]
-File: fig/NTNU.pdf Graphic file (type pdf)
- <use fig/NTNU.pdf>
-Package pdftex.def Info: fig/NTNU.pdf used on input line 77.
-(pdftex.def)             Requested size: 435.4264pt x 95.75764pt.
-
-Overfull \hbox (5.74524pt too wide) in paragraph at lines 105--107
-\T1/futs/m/n/12 neath the com-mand $\FMS/futm/m/n/12 n$\T1/cmtt/m/n/12 includeg
-raphics \T1/futs/m/n/12 for fig-ures, and above the com-mand $\FMS/futm/m/n/12 
-n$\T1/cmtt/m/n/12 begin{tabular*}
- []
-
-[47] [48] [49]) [50]
 \openout2 = `acronyms.aux'.
 
  (./acronyms.tex
 Appendix A.
-) [51
+) [10
 
 
 
@@ -1474,66 +1128,101 @@ Appendix A.
 
  (./appendix-b.tex
 Appendix B.
-) [52
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 13.
+) [11
 
 
 
-] (./thesis.bbl) [53
+] (./thesis.bbl) [12
 
 
 ]
 \openout2 = `vitae.aux'.
 
  (./vitae.tex
-<fig/me.pdf, id=771, 238.8925pt x 283.0575pt>
-File: fig/me.pdf Graphic file (type pdf)
- <use fig/me.pdf>
-Package pdftex.def Info: fig/me.pdf used on input line 24.
-(pdftex.def)             Requested size: 71.66829pt x 84.9179pt.
- [54
+
+pdfTeX warning: pdflatex (file ./cv.pdf): PDF inclusion: found PDF version <1.7
+>, but at most version <1.5> allowed
+<cv.pdf, id=195, 597.50829pt x 845.0471pt>
+File: cv.pdf Graphic file (type pdf)
+ <use cv.pdf>
+Package pdftex.def Info: cv.pdf used on input line 9.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 
 
- <./fig/me.pdf>]) [55]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 55.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 55.
- (./thesis.aux (./front.aux) (./problemstatement.aux)
-(./acknowledgements.aux) (./abstract.aux) (./introduction.aux)
-(./relatedwork.aux) (./background.aux) (./setupandmethodology.aux)
-(./implementation.aux) (./resultsanddiscussion.aux) (./conslution.aux)
-(./futurework.aux) (./acronyms.aux) (./appendix-b.aux) (./vitae.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 55.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 55.
+pdfTeX warning: pdflatex (file ./cv.pdf): PDF inclusion: found PDF version <1.7
+>, but at most version <1.5> allowed
+File: cv.pdf Graphic file (type pdf)
+<use cv.pdf>
+Package pdftex.def Info: cv.pdf used on input line 9.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+
+
+pdfTeX warning: pdflatex (file ./cv.pdf): PDF inclusion: found PDF version <1.7
+>, but at most version <1.5> allowed
+[13
+
+
+]
+
+pdfTeX warning: pdflatex (file ./cv.pdf): PDF inclusion: found PDF version <1.7
+>, but at most version <1.5> allowed
+<cv.pdf, id=203, page=1, 597.50829pt x 845.0471pt>
+File: cv.pdf Graphic file (type pdf)
+ <use cv.pdf, page 1>
+Package pdftex.def Info: cv.pdf, page1 used on input line 9.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: cv.pdf Graphic file (type pdf)
+
+<use cv.pdf, page 1>
+Package pdftex.def Info: cv.pdf, page1 used on input line 9.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: cv.pdf Graphic file (type pdf)
+ <use cv.pdf, page 1>
+Package pdftex.def Info: cv.pdf, page1 used on input line 9.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: cv.pdf Graphic file (type pdf)
+ <use cv.pdf, page 1>
+Package pdftex.def Info: cv.pdf, page1 used on input line 9.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: cv.pdf Graphic file (type pdf)
+
+<use cv.pdf, page 1>
+Package pdftex.def Info: cv.pdf, page1 used on input line 9.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [14 <./cv.pdf>])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 56.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 56.
+ (./thesis.aux (./front.aux)
+(./problemstatement.aux) (./acknowledgements.aux) (./abstract.aux)
+(./introduction.aux) (./relatedwork.aux) (./background.aux)
+(./setupandmethodology.aux) (./implementation.aux) (./resultsanddiscussion.aux)
+(./conclution.aux) (./futurework.aux) (./acronyms.aux) (./appendix-b.aux)
+(./vitae.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 56.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 56.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: E0020CB9BF4BBE0DFF4478B02BF0FDB9;4136.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 55.
+(rerunfilecheck)             Checksum: 075D5E8B330C8721E44280ABCDDC455A;1151.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 56.
  ) 
 Here is how much of TeX's memory you used:
- 8645 strings out of 493304
- 119659 string characters out of 6139870
- 210409 words of memory out of 5000000
- 11605 multiletter control sequences out of 15000+600000
- 115231 words of font info for 121 fonts, out of 8000000 for 9000
+ 9345 strings out of 493304
+ 129801 string characters out of 6139870
+ 229412 words of memory out of 5000000
+ 12484 multiletter control sequences out of 15000+600000
+ 68074 words of font info for 63 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 36i,10n,34p,857b,391s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/
-fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/t
-ype1/public/fourier/fourier-mex.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/fourier/fourier-mlit.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/fourier/fourier-ms.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mar
-vosym/marvosym.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putb
-8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putbi8a.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/adobe/utopia/putri8a.pfb></usr/share/texmf/fonts/type1/public/cm
--super/sftt1200.pfb>
-Output written on thesis.pdf (61 pages, 256539 bytes).
+ 43i,18n,47p,275b,451s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/adobe/utopia/putr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/adobe/utopia/putr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopi
+a/putri8a.pfb>
+Output written on thesis.pdf (19 pages, 193084 bytes).
 PDF statistics:
- 875 PDF objects out of 1000 (max. 8388607)
- 789 compressed objects within 8 object streams
- 205 named destinations out of 1000 (max. 500000)
- 536 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 253 PDF objects out of 1000 (max. 8388607)
+ 213 compressed objects within 3 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 194 words of extra memory for PDF output out of 10000 (max. 10000000)
 
