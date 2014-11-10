@@ -3,3 +3,49 @@
 % !TEX spellcheck = en-US
 \chapter[Background]{Background}
 
+\section{Energy measurement}
+
+\section{NEON}
+
+\section{Task based programming}
+Task based programming allow a programmer to work with parallel programs, with an abstraction from the program itself.
+When programming with this model, the program can be split into tasks which can run in parallel.
+When the program run, it will run a task manager as part of the program.
+This task manager can dynamically assign tasks to the processors, and the programmer does not have to handle all the time consuming tasks related to manual parallelisation.
+
+The task based programming model also allow simpler development of protable programs.
+When the program is running tasks on available CPUs, it is not a problem to allow it to run on larger or smaller numbers of processors, and even clusters can support the program.
+This model even allow the tasks to run on different types of processors in a hetrogenous enviroment   
+
+\section[OmpSs]{OpenMP Super scalar}
+OpenMP Super scalar is a extention of the OpenMP API to integrate features from the StarSs programming model.
+It is currently under development at the Barcelona Supercomputing Center.
+The goal of OmpSs is to extend the programming model to support a wide range og processors.
+The OmpSs programming model will run on a wide variety of different systems, such as traditional personal computers, clusters, shared memory systems and hetrogenous processors.
+While the software is not yet comlpeted or fully tested, there have been several reports exploring it's potentilal.
+The results have proven OmpSs as an efficient solution on both clusters and hetrogenous systems utilizing OpenCL and CUDA.
+
+
+\section{Heterognous multi-processor}
+Heterognous multi-processor systems have multiple different processors, opposed to traditional multi-processor systems.
+A typical modern processor have several processors, and a program can run effectivly by having threads running parts of theis work on each of them.
+This work is often of such a nature that it can run better on a different processor.
+Sometimes it can run just as well on multiple simple processor, while using less die space and energy.
+In other instances, an advanced processor with some special capabilities, like vector instructions, can be more efficient.
+
+  This kind of processors have a potential to help us overcome the challenges that are emerging in processor development.
+    Unfortunatly they also introduce several new challenges.
+
+
+\section{Arendale Board}
+\subsection{ARM Cortex-A15}
+\subsection{ARM Mali T604}
+
+\section{Odroid}
+\subsection{ARM Cortex-A15}
+\subsection{ARM Cortex-A7}
+\subsection{ARM Mali T628}
+
+\section{Algorithms}
+Here I will write about the algorithms used in the experiments.
+
