@@ -6,19 +6,30 @@
 \section{Energy measurement}
 
 \section{NEON}
+NEON is a general-purpose single input multiple data (SIMD) technology implemented in the ARM Cortex A series of processors.
+It is able to run SIMD instructions on 128bit registers.
+By utilizing the NEON unit of the ARM processors, it is possible to achive paralellism in each seperate core.
+This will often open for great performance boost on problems like the ones explored in this paper.
+Each register may be filled with single precission floating point numbers ranging from 8 to 64 bit each.
+In future generations of the ARM ISA there will be support for other data types as well.
+Different implementations of NEON exist in the Cortex A cores, and while the even the simple implementations in smaller cores like the A7 can give great performance boost, the implementations present in the newest cores are performing even better.
+The A15 offer two NEON units, and the instruction pipeline to start the cores are shorter than in simpler implementations.
+
+
 
 \section{Task based programming}
-Task based programming allow a programmer to work with parallel programs, with an abstraction from the program itself.
+Task based programming allow a programmer to work with parallel programs, with an abstraction from the paralellization itself.
 When programming with this model, the program can be split into tasks which can run in parallel.
 When the program run, it will run a task manager as part of the program.
 This task manager can dynamically assign tasks to the processors, and the programmer does not have to handle all the time consuming tasks related to manual parallelisation.
+As long as the programmer correctly handle dependencies in the paralellized code, it will be possible to write this kind of code as if it was serial.
 
-The task based programming model also allow simpler development of protable programs.
+The task based programming model also allow simpler development of portable programs.
 When the program is running tasks on available CPUs, it is not a problem to allow it to run on larger or smaller numbers of processors, and even clusters can support the program.
-This model even allow the tasks to run on different types of processors in a hetrogenous enviroment   
+This model even allow the tasks to run on different types of processors in a hetrogenous enviroment.
 
 \section[OmpSs]{OpenMP Super scalar}
-OpenMP Super scalar is a extention of the OpenMP API to integrate features from the StarSs programming model.
+OpenMP Super scalar (OmpSs) is a extention of the OpenMP API to integrate features from the StarSs programming model.
 It is currently under development at the Barcelona Supercomputing Center.
 The goal of OmpSs is to extend the programming model to support a wide range og processors.
 The OmpSs programming model will run on a wide variety of different systems, such as traditional personal computers, clusters, shared memory systems and hetrogenous processors.
@@ -36,14 +47,55 @@ In other instances, an advanced processor with some special capabilities, like v
   This kind of processors have a potential to help us overcome the challenges that are emerging in processor development.
     Unfortunatly they also introduce several new challenges.
 
+\section{Experiment platforms}
 
-\section{Arendale Board}
-\subsection{ARM Cortex-A15}
-\subsection{ARM Mali T604}
+\subsection{Arendale Board}
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=90mm]{fig/Arendale.jpg}
+  \caption{A simple caption \label{overflow}}
+\end{figure}
+The Arendale Duo is a computing system mounted on a single board.
+It is fitted with an Exynos 5250 SoC, which contain a dualcore Arm Cortex-A15 , as well as an ARM Mali T-604 GPU.
+This computer offer a range of supported linux distributions, as well as the OmpSs programming model.
+The computer was used in the 2014 master thesis "Acceleration with OmpSs and Neon/OpenCL on ARM Processor" by Trond Inge Lillesand.
+The thesis lay alot of the ground for this pilot project and planned master thesis.
 
-\section{Odroid}
+\subsection{ODROID-XU3}
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=90mm]{fig/ODROID.jpg}
+  \caption{A simple caption \label{overflow}}
+\end{figure}
+The ODROID-XU3 is a new single-board computing system, offering interesting properties for these experiments.
+The system have an Exynos 5422 heterogenous Soc.
+Exynos 5422 have a quadcore ARM Cortex-A15 CPU and a ARM Mali T-628 GPU, but also a smaller quadcore ARM Cortex-A7 coprocessor.
+These 3 different processing units can be used simultaniously to solve problems.
+In this paper, and the planned master thesis following it, the potency of this kind of heterogenous processor will be explored.
+
 \subsection{ARM Cortex-A15}
+\begin{table}[h]
+  \begin{tabular}{ll}
+    Performance       & 1.0 GHz to 2.5GHz  \\
+    L1 Cache          & 64KB \\
+    L2 Cache          & 4 MB \\
+    L3 Cache          & None in core, may be implemented shared in multicore system. \\
+    Architecture      & ARMv7-A            \\
+    Supported features& ARM Thumb-2 \\
+                      & TrustZone® security technology \\
+                      & NEON™ Advanced SIMD \\
+                      & DSP \& SIMD extensions \\
+                      & VFPv4 Floating point \\
+                      & Hardware virtualization support \\
+                      & Large Physical Address Extensions (LPAE) \\
+                      & Integer Divide \\
+                      & Fused MAC \\
+                      & Hypervisor debug instructions \\
+    Memory management   & 40-bit ARMv7 Memory Management Unit
+  \end{tabular}
+\end{table}
 \subsection{ARM Cortex-A7}
+\subsection{ARM Mali T604}
 \subsection{ARM Mali T628}
 
 \section{Algorithms}
