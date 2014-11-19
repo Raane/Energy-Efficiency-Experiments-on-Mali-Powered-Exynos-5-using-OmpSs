@@ -68,13 +68,13 @@ The thesis lay alot of the ground for this pilot project and planned master thes
   \caption{A simple caption \label{overflow}}
 \end{figure}
 The ODROID-XU3 is a new single-board computing system, offering interesting properties for these experiments.
-The system have an Exynos 5422 heterogenous Soc.
-Exynos 5422 have a quadcore ARM Cortex-A15 CPU and a ARM Mali T-628 GPU, but also a smaller quadcore ARM Cortex-A7 coprocessor.
+The system has an Exynos 5422 heterogenous Soc.
+Exynos 5422 has a quadcore ARM Cortex-A15 CPU and a ARM Mali T-628 GPU, but also a smaller quadcore ARM Cortex-A7 coprocessor.
 These 3 different processing units can be used simultaniously to solve problems.
 In this paper, and the planned master thesis following it, the potency of this kind of heterogenous processor will be explored.
 
 \subsection{ARM Cortex-A15}
-\begin{table}[h]
+\begin{table}[H]
   \begin{tabular}{ll}
     Performance       & 1.0 GHz to 2.5GHz  \\
     L1 Cache          & 64KB \\
@@ -87,16 +87,64 @@ In this paper, and the planned master thesis following it, the potency of this k
                       & DSP \& SIMD extensions \\
                       & VFPv4 Floating point \\
                       & Hardware virtualization support \\
-                      & Large Physical Address Extensions (LPAE) \\
                       & Integer Divide \\
                       & Fused MAC \\
                       & Hypervisor debug instructions \\
-    Memory management   & 40-bit ARMv7 Memory Management Unit
+    Memory management & 40-bit ARMv7 Memory Management Unit
   \end{tabular}
 \end{table}
 \subsection{ARM Cortex-A7}
+The ARM Cortex-A7 is designed to be a low power alternative to the ARM Cortex-A15 and ARM Cortex-A17, with the same supported ISA and features.
+This enable the ARM Cortex to be paired with it's largers relatives in a ARM big.LITTLE configuration.
+\begin{table}[H]
+  \begin{tabular}{ll}
+    Performance       & 1.2 GHz to 1.6GHz  \\
+    L1 Cache          & 8-64KB \\
+    L2 Cache          & up to 1 MB \\
+    L3 Cache          & None in core, may be implemented shared in multicore system. \\
+    Architecture      & ARMv7-A            \\
+    Supported features& ARM Thumb-2 \\
+                      & TrustZone® security technology \\
+                      & NEON™ Advanced SIMD \\
+                      & DSP \& SIMD extensions \\
+                      & VFPv4 Floating point \\
+                      & Hardware virtualization support \\
+                      & Integer Divide \\
+                      & Fused MAC \\
+                      & Hypervisor debug instructions \\
+    Memory management & 40-bit ARMv7 Memory Management Unit
+  \end{tabular}
+\end{table}
 \subsection{ARM Mali T604}
+\begin{table}[H]
+  \begin{tabular}{ll}
+    Performance       & 533 MHz\\
+                      & 17 GFLOPS  \\
+    Multicore support & 1-4 cores  \\
+    API Support       & OpenGL 1.1, 2.0, 3.0 and 3.1  \\
+                      & OpenCL 1.1  \\
+                      & DirectX 11  \\
+                      & RenderScript \\
+    Anti-Aliasing     & 4xFSAA with minimal performance drop  \\
+                      & 16xFSAA  \\
+    Cache             & 32-256KB L2 cache
+  \end{tabular}
+\end{table}
 \subsection{ARM Mali T628}
+\begin{table}[H]
+  \begin{tabular}{ll}
+    Performance       & 533/695 MHz \\
+                      & 17/23.7 GFLOPS \\
+    Multicore support & 1-8 cores  \\
+    API Support       & OpenGL 1.1, 2.0, 3.0 and 3.1  \\
+                      & OpenCL 1.1  \\
+                      & DirectX 11  \\
+                      & RenderScript \\
+    Anti-Aliasing     & 4xFSAA with minimal performance drop  \\
+                      & 16xFSAA  \\
+    Cache             & 32-256KB L2 cache
+  \end{tabular}
+\end{table}
 
 \section{Algorithms}
 Here I will write about the algorithms used in the experiments.
