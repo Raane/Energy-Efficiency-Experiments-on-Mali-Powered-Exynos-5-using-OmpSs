@@ -10,6 +10,10 @@
 \usepackage{ramsstyle}
 \usepackage{pdfpages}
 \usepackage{float}
+\usepackage{hyperref}
+
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\ref*{#1} \nameref*{#1}}} % One single link
+
 \restylefloat{table}
 %%===================================
 %Write the various parts of your thesis as separate files and include them into the main file by the command \include{name of included file}. When you compile the LaTeX file, you may choose which subfiles to include by the command

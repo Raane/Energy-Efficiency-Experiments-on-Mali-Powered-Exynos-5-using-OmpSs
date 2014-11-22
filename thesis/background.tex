@@ -49,7 +49,7 @@ In other instances, an advanced processor with some special capabilities, like v
 
 \section{Experiment platforms}
 
-\subsection{Arendale Board}
+\subsection{Arendale Board} \label{ArendaleBoard}
 \begin{figure}[ht!]
   \centering
   \includegraphics[width=90mm]{fig/Arendale.jpg}
@@ -61,7 +61,7 @@ This computer offer a range of supported linux distributions, as well as the Omp
 The computer was used in the 2014 master thesis "Acceleration with OmpSs and Neon/OpenCL on ARM Processor" by Trond Inge Lillesand.
 The thesis lay alot of the ground for this pilot project and planned master thesis.
 
-\subsection{ODROID-XU3}
+\subsection{ODROID-XU3} \label{OdroidXU3}
 \begin{figure}[ht!]
   \centering
   \includegraphics[width=90mm]{fig/ODROID.jpg}
@@ -72,6 +72,10 @@ The system has an Exynos 5422 heterogenous Soc.
 Exynos 5422 has a quadcore ARM Cortex-A15 CPU and a ARM Mali T-628 GPU, but also a smaller quadcore ARM Cortex-A7 coprocessor.
 These 3 different processing units can be used simultaniously to solve problems.
 In this paper, and the planned master thesis following it, the potency of this kind of heterogenous processor will be explored.
+
+TODO: Write this in a better fashion.
+A key feature making this card suitable for this researchproject, is the presence of 4 seperate current sensors.
+The sensors can do realtime measurement of the big CPU, little CPU, GPU and DRAM, respectivly.
 
 \subsection{ARM Cortex-A15}
 \begin{table}[H]

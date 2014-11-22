@@ -6,63 +6,94 @@
 \section{Test platfoms}
 
 \subsection{Arendale Duo}
+The Arendale Duo board was used for some perliminary research in this thesis.
+It was chosen because we had experience from earlier student projects using this board.
+It's feature set and properties are elaborated in section \fullref{ArendaleBoard}.
 \begin{table}[h]
   \begin{tabular}{ll}
-    SoC & Samsung Exynox 5250 \\
-    CPU &  \\
-    Model & ARM Cortex-A15 \\
-    Manufacturing process & 32nm \\
-    Maxiumu clock frequency & 1.7GHz \\
-    Number of cores & 2 \\
-    L2 Cache & 1MB \\
-    L1 Cache & 32KB \\
-    GPU &  \\
-    Model & ARM Mali-T604 \\
-    Number of cores & 4 \\
-    Memory &  \\
-    Available memory & 2 GB \\
-    Maxiumu clock frequency & 800MHz \\
-    Operating system &  \\
-    Distriubtion & Linux Ubuntu \\
-    Version & TODO
+    \textbf{SoC}              & Samsung Exynox 5250 \\
+    \textbf{CPU}              &  \\
+    Model                     & ARM Cortex-A15 \\
+    Manufacturing process     & 32nm \\
+    Maxiumu clock frequency   & 1.7GHz \\
+    Number of cores           & 2 \\
+    L2 Cache                  & 1MB \\
+    L1 Cache                  & 32KB \\
+    \textbf{GPU}              &  \\
+    Model                     & ARM Mali-T604 \\
+    Number of cores           & 4 \\
+    \textbf{Memory}           &  \\
+    Available memory          & 2 GB \\
+    Maxiumu clock frequency   & 800MHz \\
+    \textbf{Operating system} &  \\
+    Distriubtion              & Linux Ubuntu \\
+    Version                   & TODO
   \end{tabular}
+  \caption{Arendale Duo Spesifications\label{overflow}}
 \end{table}
-
 \subsection{ODROID-XU3}
+The ODROID-XU3 single board computing system was used for most of the experiments of this thesis.
+Fitted with an Samsung Exynos 5422 SoC it offer the heterogenous properties that will be explored in detail in the planned master thesis.
+In adition, the board offer multiple energy monitors, enabling precise data gathering.
+It's feature set and properties are elaborated in section \fullref{OdroidXU3}.
+
 \begin{table}[h]
   \begin{tabular}{ll}
-    SoC & Samsung Exynox 5422 \\
-    CPU 1 &  \\
-    Model & ARM Cortex-A15 \\
-    Manufacturing process & 32nm \\
-    Maxiumu clock frequency & 2.0GHz \\
-    Number of cores & 4 \\
-    L2 Cache & 1MB \\
-    L1 Cache & 32KB \\
-    CPU 2 &  \\
-    Model & ARM Cortex-A7 \\
-    Manufacturing process & 32nm \\
-    Maxiumu clock frequency & TODO \\
-    Number of cores & 4 \\
-    L2 Cache & TODO \\
-    L1 Cache & TODO \\
-    GPU &  \\
-    Model & ARM Mali-T628 MP6 \\
-    Number of cores & 4 \\
-    Memory &  \\
-    Available memory & 2 GB \\
-    Maxiumu clock frequency & 933MHz \\
-    Operating system &  \\
-    Distriubtion & Linux odroid \\
-    Version & 3.10.54+
+    \textbf{SoC}              & Samsung Exynox 5422 \\
+    \textbf{CPU 1}            &  \\
+    Model                     & ARM Cortex-A15 \\
+    Manufacturing process     & 32nm \\
+    Maxiumu clock frequency   & 2.0GHz \\
+    Number of cores           & 4 \\
+    L2 Cache                  & 1MB \\
+    L1 Cache                  & 32KB \\
+    \textbf{CPU 2}            &  \\
+    Model                     & ARM Cortex-A7 \\
+    Manufacturing process     & 32nm \\
+    Maxiumu clock frequency   & TODO \\
+    Number of cores           & 4 \\
+    L2 Cache                  & TODO \\
+    L1 Cache                  & TODO \\
+    \textbf{GPU}              &  \\
+    Model                     & ARM Mali-T628 MP6 \\
+    Number of cores           & 4 \\
+    \textbf{Memory}           &  \\
+    Available memory          & 2 GB \\
+    Maxiumu clock frequency   & 933MHz \\
+    \textbf{Operating system} &  \\
+    Distriubtion              & Linux odroid \\
+    Version                   & 3.10.54+
   \end{tabular}
+  \caption{ODROID-XU3 Spesifications\label{overflow}}
 \end{table}
 
-\subsection{Comparison of the test benches}
+%\subsection{Comparison of the test benches}
 
-\section{Software framworks}
+\section{Software}
+\begin{table}[h]
+  \begin{tabular}{llll}
+    \textbf{Software} & \textbf{Version}  \\
+    Nanos++           & 0.9a              \\
+    Mercurium         & 1.99.4            \\
+    Papi              & 5.3.2             \\
+    Extrae            & 3.0.1             \\
+    gcc               & 4.8.2             
+  \end{tabular}
+  \caption{Third party software and frameworks used in the experiments.\label{overflow}}
+\end{table}
+
+
 \section{Compilation and running of test benches}
 Mention frequency scaling here.
+
 \section{Performance measurment}
+In the experiments being run in this pilot project, execution time was used as the primary metric for performance.
+While running the experiments, the POSIX function gettimeofday() is used before and after running the main part of the application.
+The time difference is a used as a measurement of how good the performance is.
+
+In the planned master thesis, PAPI (Performance API) may be used to measure more detailed aspects of the performance.
+PAPI is able to access alot of different performance measurements from systems.
+The avaiable metrics include among others; Cache utilization and hit rate, memory utilization and bus utilization.
+
 \section{Energy efficiency measurement}
 
