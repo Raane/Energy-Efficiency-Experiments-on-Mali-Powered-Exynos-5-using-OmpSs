@@ -45,17 +45,18 @@ It's feature set and properties are elaborated in section \fullref{OdroidXU3}.
     Manufacturing process     & 32nm \\
     Maxiumu clock frequency   & 2.0GHz \\
     Number of cores           & 4 \\
-    L2 Cache                  & 1MB \\
-    L1 Cache                  & 32KB \\
+    L2 Cache                  & 512KB \\
+    L1 Cache                  & 32KB/32KB I/D \\
     \textbf{CPU 2}            &  \\
     Model                     & ARM Cortex-A7 \\
     Manufacturing process     & 32nm \\
-    Maxiumu clock frequency   & TODO \\
+    Maxiumu clock frequency   & 1.4GHz \\
     Number of cores           & 4 \\
-    L2 Cache                  & TODO \\
-    L1 Cache                  & TODO \\
+    L2 Cache                  & 2MB \\
+    L1 Cache                  & 32KB/32KB I/D \\
     \textbf{GPU}              &  \\
     Model                     & ARM Mali-T628 MP6 \\
+    Maxiumu clock frequency   & 600 MHz \\
     Number of cores           & 4 \\
     \textbf{Memory}           &  \\
     Available memory          & 2 GB \\
@@ -96,4 +97,17 @@ PAPI is able to access alot of different performance measurements from systems.
 The avaiable metrics include among others; Cache utilization and hit rate, memory utilization and bus utilization.
 
 \section{Energy efficiency measurement}
+Because of the different features of the two experiment platforms, two different energy efficiency measurement schemes was used.
+
+\subsection{ODROID-XU3}
+As elaborated in section \fullref{OdroidXU3}, the ODROID-XU3 feature 4 current sensors.
+These current sensors are used to monitor the current flow to the large CPU, small CPU, GPU and memory respectivly.
+In addition to the current sensors, it is possible to read the supply voltage to each of these components.
+Based on these two sensor readings, we can calculate the power consumption of each of the components in realtime while running our applications.
+Using this scheme for power measurement, we are able to get readings with high precission of each component.
+The results will show how the consumption vary with different application configurations both for the application as a whole and for different stages of execution.
+
+$ Power\ consumption (Watt) = Current (Ampere) \times Voltage (Volt) $
+
+\subsection{Arendale Duo}
 

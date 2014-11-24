@@ -15,7 +15,7 @@ In future generations of the ARM ISA there will be support for other data types 
 Different implementations of NEON exist in the Cortex A cores, and while the even the simple implementations in smaller cores like the A7 can give great performance boost, the implementations present in the newest cores are performing even better.
 The A15 offer two NEON units, and the instruction pipeline to start the cores are shorter than in simpler implementations.
 
-
+\section{The Performance API (PAPI)}
 
 \section{Task based programming}
 Task based programming allow a programmer to work with parallel programs, with an abstraction from the paralellization itself.
@@ -69,9 +69,23 @@ The thesis lay alot of the ground for this pilot project and planned master thes
 \end{figure}
 The ODROID-XU3 is a new single-board computing system, offering interesting properties for these experiments.
 The system has an Exynos 5422 heterogenous Soc.
-Exynos 5422 has a quadcore ARM Cortex-A15 CPU and a ARM Mali T-628 GPU, but also a smaller quadcore ARM Cortex-A7 coprocessor.
+Exynos 5422 has a quadcore ARM Cortex-A15 CPU and a ARM Mali T-628 GPU, but also a smaller quadcore ARM Cortex-A7 processor.
 These 3 different processing units can be used simultaniously to solve problems.
 In this paper, and the planned master thesis following it, the potency of this kind of heterogenous processor will be explored.
+
+\subsubsection{Power monitoring}
+The ODROID-XU3 commes with integrated power monitoring tools.
+Implemented in hardware, it have got 4 current sensors sitting on the power pins of the Exynos SoC.
+These monitor the current going through the large CPU cores, the small CPU cores, memory and GPU respectivly.
+In addition to the current sensors, the power management for the SoC is also available to the programmer, making supply voltage to the components known.
+By using the voltage and current, the power consumption is known.
+As a whole, the system offer frequency, voltage, current, temperature and power readings in real time.
+These fine energy and performance metrics make the system highly suitable for developers.
+They are able to run their programs, collect energy profiling data and optimize their software based on the result.
+
+\subsubsection{Performance}
+The ODROID-XU3 comes with 
+
 
 TODO: Write this in a better fashion.
 A key feature making this card suitable for this researchproject, is the presence of 4 seperate current sensors.
