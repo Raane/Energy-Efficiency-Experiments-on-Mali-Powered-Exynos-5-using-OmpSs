@@ -76,6 +76,7 @@ In this paper, and the planned master thesis following it, the potency of this k
 \subsubsection{Power monitoring}
 The ODROID-XU3 commes with integrated power monitoring tools.
 Implemented in hardware, it have got 4 current sensors sitting on the power pins of the Exynos SoC.
+The energy monitors are indicated in figure \ref{overview-odroid}.
 These monitor the current going through the large CPU cores, the small CPU cores, memory and GPU respectivly.
 In addition to the current sensors, the power management for the SoC is also available to the programmer, making supply voltage to the components known.
 By using the voltage and current, the power consumption is known.
@@ -83,8 +84,18 @@ As a whole, the system offer frequency, voltage, current, temperature and power 
 These fine energy and performance metrics make the system highly suitable for developers.
 They are able to run their programs, collect energy profiling data and optimize their software based on the result.
 
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=130mm]{fig/overview-odroid.jpg}
+  \caption{ODROID-XU3 anotated (hardkernel.com\cite{hardkernel01})\label{overview-odroid}}
+\end{figure}
 \subsubsection{Performance}
-The ODROID-XU3 comes with 
+
+The ODROID-XU3 comes with the ARM Cortex-A15 limited to 2GHz and the ARM Cortex-A7 limited to 1.4G Hz.
+There is 2GB of memory available running at 800 MHz, and the ARM Mali T-628 GPU run at 600 MHz.
+This performance place it at the higher end of SoCs, but not quite in the top, as it is beaten by systems like TODO A reference system here).
+
+
 
 
 TODO: Write this in a better fashion.
