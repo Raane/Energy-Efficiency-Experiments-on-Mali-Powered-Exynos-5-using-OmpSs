@@ -1,4 +1,3 @@
-The heterogen property of this 
 %!TEX root = thesis.tex
 % !TEX spellcheck = en-US
 \chapter[Background]{Background}
@@ -89,18 +88,21 @@ They are able to run their programs, collect energy profiling data and optimize 
   \includegraphics[width=130mm]{fig/overview-odroid.jpg}
   \caption{ODROID-XU3 anotated (hardkernel.com\cite{hardkernel01})\label{overview-odroid}}
 \end{figure}
+
 \subsubsection{Performance}
 
 The ODROID-XU3 comes with the ARM Cortex-A15 limited to 2GHz and the ARM Cortex-A7 limited to 1.4G Hz.
 There is 2GB of memory available running at 800 MHz, and the ARM Mali T-628 GPU run at 600 MHz.
 This performance place it at the higher end of SoCs, but not quite in the top, as it is beaten by systems like TODO A reference system here).
+The ODROID-XU3 feature the new eMMC 5.0 standard for storage.
+The performance of this standard outform both older eMMC standards, as well as memory card readers, which other similar systems may contain.
+The ODROID-XU3 can achive a read/write performance of 198/74 MB/s\cite{hardkernel01}, which alot better than older systems like the Arendale Duo.
 
-
-
-
-TODO: Write this in a better fashion.
-A key feature making this card suitable for this researchproject, is the presence of 4 seperate current sensors.
-The sensors can do realtime measurement of the big CPU, little CPU, GPU and DRAM, respectivly.
+In addition to the eight processor cores, the system also feature a ARM Mali T-628.
+The Mali T-628 function both as a regular GPU, as well as a GPGPU.
+It support both open GL and DirectX, and is able to produce graphics for all but the most demanding gaming and simulation purposes.
+In addition to this it is able to run computations with Open CL.
+This mean that problems with parallel parts, can be solved efficiently utilizing the GPU.
 
 \subsection{ARM Cortex-A15}
 \begin{table}[H]
@@ -108,9 +110,8 @@ The sensors can do realtime measurement of the big CPU, little CPU, GPU and DRAM
     Performance       & 1.0 GHz to 2.5GHz  \\
     L1 Cache          & 64KB \\
     L2 Cache          & 4 MB \\
-    L3 Cache          & None in core, may be implemented shared in multicore system. \\
+    L3 Cache          & None in core, may be implemented shared in multicore system. \\Architecture      & ARMv7-A            \\
     Architecture      & ARMv7-A            \\
-    Supported features& ARM Thumb-2 \\
                       & TrustZone® security technology \\
                       & NEON™ Advanced SIMD \\
                       & DSP \& SIMD extensions \\
