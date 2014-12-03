@@ -12,6 +12,10 @@
 \usepackage{float}
 \usepackage{hyperref}
 \usepackage{mathtools}
+\usepackage{array}
+\usepackage{booktabs}
+
+\setlength{\heavyrulewidth}{1.5pt}
 
 \newcommand*{\fullref}[1]{\hyperref[{#1}]{\ref*{#1} \nameref*{#1}}} % One single link
 
@@ -56,7 +60,5 @@
 \addcontentsline{toc}{chapter}{\bibname}
 \bibliography{refs}{}
 %%=========================================
-\include{vitae}         % Your curriculum Vitae     
-%%=============================================
 
 \end{document}
