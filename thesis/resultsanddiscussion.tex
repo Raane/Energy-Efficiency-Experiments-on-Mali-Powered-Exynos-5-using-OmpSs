@@ -3,8 +3,8 @@
 % !TEX spellcheck = en-US
 \chapter[Result and Discussion]{Result and Discussion}
 In this chapter the results of the experiments described in earlier chapters are presented.
-The chapter is devided into three sections, covering the 3 different types experiments that were run.
-First the experimental optimalization towards our systems properties are presented.
+The chapter is divided into three sections, covering the 3 different types experiments that were run.
+First the experimental optimization towards our systems properties are presented.
 Then the experiment results regarding system performance will be presented.
 Finally the results regarding the systems energy efficiency are presented.
 
@@ -13,7 +13,7 @@ Different systems may perform better with different programs.
 To ensure that the results we find are represented by programs well suited for the system, the experiments were tested with different degrees of loop unrolling.
 By unrolling loop iterations, the task sizes increase.
 This reduce the overhead of initiating iterations.
-It also reduce overhead related to loop controll, like end of loop tests and dataloading into new memory locations neccessary for each loop iteration.
+It also reduce overhead related to loop control, like end of loop tests and loading data into new memory locations necessary for each loop iteration.
 There is however a limit to how much unrolling can be done.
 At some point the size of the task will create difficulties like early cache eviction of data.
 The appropriate amount of cache may vary from system to system.
@@ -40,9 +40,9 @@ Because of this, experiments were run with different unroll degrees, and on all 
   \caption{Execution time of 2D-Convolution with different degrees of loop unrolling on different processor configurations. \label{overflow}}
 \end{table}
 
-The results show that a loop unroll degree of 8 was optimal for this spesific implementation of 2D-Convolution on ODROID-XU3.
+The results show that a loop unroll degree of 8 was optimal for this specific implementation of 2D-Convolution on ODROID-XU3.
 This was observed across the results with all tested processor configurations.
-Because of this result, the remainging experiments are all run with a loop unroll degree of 8.
+Because of this result, the remaining experiments are all run with a loop unroll degree of 8.
 
 As mentioned loop unrolling is limited.
 In 2D-Convolution there are many read write operations in the loop body.
@@ -52,8 +52,8 @@ There is reason to suspect that this is what we are observing in the performance
 
 \section{Performance}
 Even with energy efficiency as the focus, performance data are still interesting.
-The data are both usefull on their own to observe the power of the system, as well as being a way to compare energy results.
-When energy efficiency of a system is measured, it is important to look at the energy data of the system in light of it's computaional power.
+The data are both useful on their own to observe the power of the system, as well as being a way to compare energy results.
+When energy efficiency of a system is measured, it is important to look at the energy data of the system in light of it's computational power.
 A system consuming low amounts of power is not as impressive if it is equally low performing.
 These are the results of running 2D-Convolution with 8 as the loop unroll on different processor configurations.
 
@@ -90,23 +90,23 @@ These are the results of running 2D-Convolution with 8 as the loop unroll on dif
 All processors perform 3.7 times better than only the small cores.
 
 \section{Energy measurements}
-As described in chapter \fullref{setupandmethodology}, seperate energy measurements for the different SoC components were gathered during execution of the experiments.
+As described in chapter \fullref{setupandmethodology}, separate energy measurements for the different SoC components were gathered during execution of the experiments.
 The each of the 4 components value was logged every 200 ms.
 In figure \ref{powerovertime} you can see the raw energy measurements for a single execution of 2D-Convolution running on all 8 processors.
 We can here observe the energy consumption of the program throughout the execution for different components.
 The total energy consumption can be calculated from the data.
-But overvations regarding power uage during different execution stages can also be analysed.
+But observations regarding power usage during different execution stages can also be analyzed.
 The same kind of data were gathered for a range of different processor configurations.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=160mm]{fig/power-over-time.eps}
-  \caption{Power cunsumption for the large and small cores during executioin of 2D-Convolution with unroll 8x. This is a full execution running on all 8 processors. \label{overflow}}\label{powerovertime}
+  \caption{Power consumption for the large and small cores during execution of 2D-Convolution with unroll 8x. This is a full execution running on all 8 processors. \label{overflow}}\label{powerovertime}
 \end{figure}
 There is a spike in power consumption on both the small and large cores at the start of the execution.
 This spike can be caused by a lot of different reasons.
 There is not enough data to know what caused it.
-Typical reasons for such spikes are intense opetaions during initiation of the program, or simply hardware implementations causing a power surge when processor cores are suddenly powered from idle state.
+Typical reasons for such spikes are intense operations during initiation of the program, or simply hardware implementations causing a power surge when processor cores are suddenly powered from idle state.
 For the rest of the execution there are variations in power consumption, but the consumption vary around the same general level.
 
 \begin{figure}[H]
