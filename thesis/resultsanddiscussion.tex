@@ -84,29 +84,35 @@ These are the results of running 2D-Convolution with 8 as the loop unroll on dif
   \caption{Performance of 2D-Convolution with different processor configurations. \label{overflow}}
 \end{table}
 
-\section{Energy measurements}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=160mm]{fig/power-over-time.eps}
-  \caption{Power cunsumption for the large and small cores during executioin of 2D-Convolution with unroll 8x. This is a full execution running on all 8 processors. \label{overflow}}
-\end{figure}
 
 4 x 1 A7 is worse than 1 x 4 A7
 4 X 1 stk A7 + 1 stk A15 is better than 4 stk A7 and 4stk A15
 All processors perform 3.7 times better than only the small cores.
 
-\section{Energy Delay product}
+\section{Energy measurements}
+As described in chapter \fullref{setupandmethodology}, seperate energy measurements for the different SoC components were gathered during execution of the experiments.
+The each of the 4 components value was logged every 200 ms.
+In figure \ref{powerovertime} you can see the raw energy measurements for a single execution of 2D-Convolution running on all 8 processors.
+We can here observe the energy consumption of the program throughout the execution for different components.
+The total energy consumption can be calculated from the data.
+But overvations regarding power uage during different execution stages can also be analysed.
+The same kind of data were gathered for a range of different processor configurations.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=160mm]{fig/power-over-time.eps}
+  \caption{Power cunsumption for the large and small cores during executioin of 2D-Convolution with unroll 8x. This is a full execution running on all 8 processors. \label{overflow}}\label{powerovertime}
+\end{figure}
+There is a spike in power consumption on both the small and large cores at the start of the execution.
+This spike can be caused by a lot of different reasons.
+There is not enough data to know what caused it.
+Typical reasons for such spikes are intense opetaions during initiation of the program, or simply hardware implementations causing a power surge when processor cores are suddenly powered from idle state.
+For the rest of the execution there are variations in power consumption, but the consumption vary around the same general level.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=160mm]{fig/power-configurations.eps}
-  \caption{Average power consumed per second for different processors configurations running 2D-Convolution. The colors indicate different components, and the full height of each column is the accumulated total for the whole system.\label{overflow}}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=160mm]{fig/power-consumed-configurations.eps}
-  \caption{Energy delay product indicating the total amount of power consumed executing the whole 2D-Convolution program. The colors indicate different components, and the full height of each column is the accumulated total for the whole system.\label{overflow}}
+  \caption{Average power consumed per second for different processors configurations running 2D-Convolution. The colors indicate different components, and the full height of each column is the accumulated total for the whole system.\label{overflow}} \label{power-configurations}
 \end{figure}
 
 \begin{table}[H]
@@ -124,4 +130,22 @@ All processors perform 3.7 times better than only the small cores.
   \end{tabular}
   \caption{Execution time of 2D-Convolution with different degrees of loop unrolling on different processor configurations. \label{overflow}}
 \end{table}
+Using the data gathered for each component in different processor configurations we can examine their efficiency.
+These data are presented in figure \ref{power-configurations}.
+
+As expected we see that the power of the ARM Cortex-A7s is a lot lower than the power of the ARM Cortex-A15.
+Turning off the power hungry Cortex-A15s reduce the total power to a sixth (0.17).
+
+Turning off 3 Cortex-A15 cores only reduce the power to about half (0.51).
+Similarly turning off 3 Cortex-A7 cores only reduce power to a bit more than two thirds (0.35).
+Even turning all the Cortex-A15 cores off still leave some power consumed by them.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=160mm]{fig/power-consumed-configurations.eps}
+  \caption{Energy delay product indicating the total amount of power consumed executing the whole 2D-Convolution program. The colors indicate different components, and the full height of each column is the accumulated total for the whole system.\label{overflow}}
+\end{figure}
+
+\section{Energy Delay product}
 
