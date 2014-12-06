@@ -89,7 +89,7 @@ These are the results of running 2D-Convolution with 8 as the loop unroll on dif
 4 X 1 stk A7 + 1 stk A15 is better than 4 stk A7 and 4stk A15
 All processors perform 3.7 times better than only the small cores.
 
-\section{Energy measurements}
+\section{Power measurements}
 As described in chapter \fullref{setupandmethodology}, separate energy measurements for the different SoC components were gathered during execution of the experiments.
 The each of the 4 components value was logged every 200 ms.
 In figure \ref{powerovertime} you can see the raw energy measurements for a single execution of 2D-Convolution running on all 8 processors.
@@ -135,17 +135,55 @@ These data are presented in figure \ref{power-configurations}.
 
 As expected we see that the power of the ARM Cortex-A7s is a lot lower than the power of the ARM Cortex-A15.
 Turning off the power hungry Cortex-A15s reduce the total power to a sixth (0.17).
+This is useful for applications running that do not require high performance, but want to consume low power.
+This way of power saving can be increased even more by utilizing only a single Cortex-A7.
+This configuration is have the lowest power consumption per second, and is useful for standing by, or executing minor calculations while standing by.
+Running on only a single Cortex-A7 reduce the power of the system to a tenth (0.10) of that of the fully powered 8 core system.
 
+In addition to the total power of the system, the results also allow us to analyze the power of each component.
 Turning off 3 Cortex-A15 cores only reduce the power to about half (0.51).
-Similarly turning off 3 Cortex-A7 cores only reduce power to a bit more than two thirds (0.35).
 Even turning all the Cortex-A15 cores off still leave some power consumed by them.
-
+Because of this power, running the system with only four Cortex-A7 cores still spend 13\% of the total energy on the Cortex-A15 cores, which are not doing any work.
+Similarly turning off 3 Cortex-A7 cores only reduce power to a bit more than two thirds (0.35).
+These results reveal that the energy for each set of cores are not spent solely on powering the cores themselves, but also some peripheral components related to the cores.
+These peripheral components can not be turned partially of, and will consume some power when at least one core is on.
+They even consume some power when the cores are all off.
+Because of this overhead power from partially powered processors, there rarely occur situations where this is optimal.
+The results for such processor configurations will be analyzed further in this thesis to observe whether or not this is the case here.
+\section{Energy consumption measurements}A \label{energyconsumptionmeasurements}
+The power usage of the different system components is interesting.
+There is however many cases where the system can be put to another task, or shut down, when it is finished.
+In such cases it is interesting to observe the total amount of energy consumed completing the task.
+In figure \ref{power-consumed-configurations} the data for each component power usage is multiplied with the execution time.
+The data height of each column is the amount of energy consumed.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=160mm]{fig/power-consumed-configurations.eps}
-  \caption{Energy delay product indicating the total amount of power consumed executing the whole 2D-Convolution program. The colors indicate different components, and the full height of each column is the accumulated total for the whole system.\label{overflow}}
+  \caption{Total energy consumption execution the whole 2D-Convolution program. The colors indicate different components, and the full height of each column is the accumulated total power consumed for the whole system.\label{overflow}} \label {power-consumed-configurations}
 \end{figure}
 
-\section{Energy Delay product}
+The data here show that, even though the fully powered system with all eight processors operating performed better than all the other processor configurations, it is not the best at energy consumption.
+The power consumed by a full execution of 2D-Convolution on all 8 processors consume 60\% more power than running it on the 4 Cortex-A7 cores alone.
+Running on the more energy efficient, processors cost performance, but it save energy.
+This is a trade off that is often observed in energy efficiency.
+It vary from application to application what is the preferred property, but it is always an issue of balancing the two.
+In section \fullref{EDP} the balance point between performance and energy of these experiments are explored in further depth.
+
+Apart from the results for the full eight core system and the 4 small cores, experiments for the other processor configurations were also carried out.
+These results however, were not promising.
+All the other processor configurations had higher energy consumption than the two first configurations.
+They their performance was also worse than the full system, which completed the execution with a lower power consumption.
+In other words, they did neither stand out in energy efficiency or performance.
+There may exist potential situations with very specific maximum execution times and such, where these configurations may be viable.
+They are however not promising candidates for general load distribution strategies.
+
+\section{Energy Delay Product (EDP) measurements} \label{EDP}
+While the energy consumption is a good energy measure in many situations, it is often interesting to compare the energy consumed with it's performance trade off.
+As explained in section \fullref{energymeasurement} energy delay product measurements can be used to examine this trade off.
+These are the energy data from chapter \ref{energyconsumptionmeasurements} multiplied with the execution time of the respective application execution.
+
+TODO: Figure here.
+
+TODO: Thoughts on figure here.
 
