@@ -3,91 +3,24 @@
 % !TEX spellcheck = en-US
 \chapter[Setup and Methodology]{Setup and Methodology} \label{setupandmethodology}
 
-\section{Test platforms}
+\section{Compilation and running of applications}
+The 2D-Convolution test application is compiled with the following command:
 
-\subsection{Arndale Duo}
-The Arndale Duo board was used for some preliminary research in this thesis.
-It was chosen because we had experience from earlier student projects using this board.
-It's feature set and properties are elaborated in section \fullref{ArndaleBoard}.
-\begin{table}[h]
-  \begin{tabular}{ll}
-    \textbf{SoC}              & Samsung Exynos 5250 \\
-    \textbf{CPU}              &  \\
-    Model                     & ARM Cortex-A15 \\
-    Manufacturing process     & 32nm \\
-    Maximum clock frequency   & 1.7GHz \\
-    Number of cores           & 2 \\
-    L2 Cache                  & 1MB \\
-    L1 Cache                  & 32KB \\
-    \textbf{GPU}              &  \\
-    Model                     & ARM Mali-T604 \\
-    Maximum clock frequency   & 600 MHz \\
-    Number of cores           & 4 \\
-    \textbf{Memory}           &  \\
-    Available memory          & 2 GB \\
-    Maximum clock frequency   & 800MHz \\
-    \textbf{Operating system} &  \\
-    Distribution              & Linux Ubuntu \\
-    Version                   & TODO
-  \end{tabular}
-  \caption{Arndale Duo Specifications\label{overflow}}
-\end{table}
-\subsection{ODROID-XU3}
-The ODROID-XU3 single board computing system was used for most of the experiments of this thesis.
-Fitted with an Samsung Exynos 5422 SoC it offer the heterogeneous properties that will be explored in detail in the planned master thesis.
-In addition, the board offer multiple energy monitors, enabling precise data gathering.
-It's feature set and properties are elaborated in section \fullref{OdroidXU3}.
+\texttt{mcc 2d-convolution.c --ompss -mfpu=neon}\\
+This generate an executable which can be run without any flags.
 
-\begin{table}[h]
-  \begin{tabular}{ll}
-    \textbf{SoC}              & Samsung Exynos 5422 \\
-    \textbf{CPU 1}            &  \\
-    Model                     & ARM Cortex-A15 \\
-    Manufacturing process     & 32nm \\
-    Maximum clock frequency   & 2.0GHz \\
-    Number of cores           & 4 \\
-    L2 Cache                  & 512KB \\
-    L1 Cache                  & 32KB/32KB I/D \\
-    \textbf{CPU 2}            &  \\
-    Model                     & ARM Cortex-A7 \\
-    Manufacturing process     & 32nm \\
-    Maximum clock frequency   & 1.4GHz \\
-    Number of cores           & 4 \\
-    L2 Cache                  & 2MB \\
-    L1 Cache                  & 32KB/32KB I/D \\
-    \textbf{GPU}              &  \\
-    Model                     & ARM Mali-T628 MP6 \\
-    Maximum clock frequency   & 600 MHz \\
-    Number of cores           & 4 \\
-    \textbf{Memory}           &  \\
-    Available memory          & 2 GB \\
-    Maximum clock frequency   & 933MHz \\
-    \textbf{Operating system} &  \\
-    Distribution              & Linux odroid \\
-    Version                   & 3.10.54+
-  \end{tabular}
-  \caption{ODROID-XU3 Specifications\label{overflow}}
-\end{table}
+\section{Configuring processor cores}
+The processor cores can of the Exynos 5422 can be turned on and off with the system running.
+Turning off a processor core is done by the operating system without the process noticing that it was moved.
+Because of this it is possible to run different parts of a program in different processor configurations.
 
-%\subsection{Comparison of the test benches}
+Turning on and off a processor core is done by writing wither a 0 or 1 to /sys/devices/system/cpu/cpuN/online.
+Processor 0-3 are the 4 ARM Cortex-A7 cores.
+Processor 4-7 are the 4 ARM Cortex-A15 cores.
+It is not possible to turn processor 0 off, and because of this it is left running in all experiments.
+This is an example of a command that will turn off processor 5:
 
-\section{Software}
-\begin{table}[H]
-  \begin{tabular}{ll}
-    \textbf{Software} & \textbf{Version}  \\
-    Nanos++           & 0.9a              \\
-    Mercurium         & 1.99.4            \\
-    Extrae            & 3.0.1             \\
-    gcc               & 4.8.2             
-  \end{tabular}
-  \caption{Third party software and frameworks used in the experiments.\label{overflow}}
-\end{table}
-
-
-\section{Compilation and running of test benches}
-Mention frequency scaling here.
-
-sudo bash -c 'echo 0 > /sys/devices/system/cpu/cpu5/online'
+\texttt{sudo bash -c 'echo 0 > /sys/devices/system/cpu/cpu5/online'}
 
 \section{Performance measurement}
 In the experiments being run in this pilot project, execution time was used as the primary metric for performance.
@@ -98,10 +31,7 @@ In the planned master thesis, PAPI (Performance API) may be used to measure more
 PAPI is able to access a lot of different performance measurements from systems.
 The available metrics include among others; Cache utilization and hit rate, memory utilization and bus utilization.
 
-\section{Energy efficiency measurement}
-Because of the different features of the two experiment platforms, two different energy efficiency measurement schemes was used.
-
-\subsection{ODROID-XU3}
+\section{Energy measurement on ODROID-XU3}
 As elaborated in section \fullref{OdroidXU3}, the ODROID-XU3 feature 4 current sensors.
 These current sensors are used to monitor the current flow to the large CPU, small CPU, GPU and memory respectively.
 In addition to the current sensors, it is possible to read the supply voltage to each of these components.
@@ -110,6 +40,4 @@ Using this scheme for power measurement, we are able to get readings with high p
 The results will show how the consumption vary with different application configurations both for the application as a whole and for different stages of execution.
 
 $ Power\ consumption (Watt) = Current (Ampere) \times Voltage (Volt) $
-
-\subsection{Arndale Duo}
 

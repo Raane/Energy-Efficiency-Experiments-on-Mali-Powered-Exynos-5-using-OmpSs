@@ -81,7 +81,7 @@ In other instances, an advanced processor with some special capabilities, like v
 
 \section{Experiment platforms}
 
-\subsection{Arndale Board} \label{ArendaleBoard}
+\subsection{Arndale Board} \label{ArndaleBoard}
 \begin{figure}[ht!]
   \centering
   \includegraphics[width=90mm]{fig/Arendale.jpg}
@@ -90,11 +90,43 @@ In other instances, an advanced processor with some special capabilities, like v
 The Arndale Duo is a computing system mounted on a single board.
 It is fitted with an Exynos 5250 SoC, which contain a dual core Arm Cortex-A15 , as well as an ARM Mali T-604 GPU.
 This computer offer a range of supported Linux distributions, as well as the OmpSs programming model.
+The Arndale Duo board was used for some preliminary research in this thesis.
+It was chosen because we had experience from earlier student projects using this board.
 The computer was used in the 2014 master thesis "Acceleration with OmpSs and Neon/OpenCL on ARM Processor" by Trond Inge Lillesand.
 The thesis lay a lot of the ground for this pilot project and planned master thesis.
 
+\begin{table}[h]
+  \begin{tabular}{ll}
+    \toprule
+    \textbf{SoC}              & Samsung Exynos 5250 \\
+    \midrule
+    \textbf{CPU}              &  \\
+    Model                     & ARM Cortex-A15 \\
+    Manufacturing process     & 32nm \\
+    Maximum clock frequency   & 1.7GHz \\
+    Number of cores           & 2 \\
+    L2 Cache                  & 1MB \\
+    L1 Cache                  & 32KB \\
+    \midrule
+    \textbf{GPU}              &  \\
+    Model                     & ARM Mali-T604 \\
+    Maximum clock frequency   & 600 MHz \\
+    Number of cores           & 4 \\
+    \midrule
+    \textbf{Memory}           &  \\
+    Available memory          & 2 GB \\
+    Maximum clock frequency   & 800MHz \\
+    \midrule
+    \textbf{Operating system} &  \\
+    Distribution              & Linux Ubuntu \\
+    Version                   & TODO \\
+    \bottomrule
+  \end{tabular}
+  \caption{Arndale Duo Specifications\label{overflow}}
+\end{table}
+
 \subsection{ODROID-XU3} \label{OdroidXU3}
-\begin{figure}[ht!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=90mm]{fig/ODROID.jpg}
   \caption{ODROID-XU3 \label{overflow}}
@@ -104,6 +136,45 @@ The system has an Exynos 5422 heterogeneous Soc.
 Exynos 5422 has a quad core ARM Cortex-A15 CPU and a ARM Mali T-628 GPU, but also a smaller quad core ARM Cortex-A7 processor.
 These 3 different processing units can be used simultaneously to solve problems.
 In this paper, and the planned master thesis following it, the potency of this kind of heterogeneous processor will be explored.
+This is the system that will run most of the experiments, including all energy efficiency experiments.
+
+\begin{table}[H]
+  \begin{tabular}{ll}
+    \toprule
+    \textbf{SoC}              & Samsung Exynos 5422 \\
+    \midrule
+    \textbf{CPU 1}            &  \\
+    Model                     & ARM Cortex-A15 \\
+    Manufacturing process     & 32nm \\
+    Maximum clock frequency   & 2.0GHz \\
+    Number of cores           & 4 \\
+    L2 Cache                  & 512KB \\
+    L1 Cache                  & 32KB/32KB I/D \\
+    \midrule
+    \textbf{CPU 2}            &  \\
+    Model                     & ARM Cortex-A7 \\
+    Manufacturing process     & 32nm \\
+    Maximum clock frequency   & 1.4GHz \\
+    Number of cores           & 4 \\
+    L2 Cache                  & 2MB \\
+    L1 Cache                  & 32KB/32KB I/D \\
+    \midrule
+    \textbf{GPU}              &  \\
+    Model                     & ARM Mali-T628 MP6 \\
+    Maximum clock frequency   & 600 MHz \\
+    Number of cores           & 4 \\
+    \midrule
+    \textbf{Memory}           &  \\
+    Available memory          & 2 GB \\
+    Maximum clock frequency   & 933MHz \\
+    \midrule
+    \textbf{Operating system} &  \\
+    Distribution              & Linux odroid \\
+    Version                   & 3.10.54+ \\
+    \bottomrule
+  \end{tabular}
+  \caption{ODROID-XU3 Specifications\label{overflow}}
+\end{table}
 
 \subsubsection{Power monitoring}
 The ODROID-XU3 comes with integrated power monitoring tools.
@@ -209,6 +280,31 @@ This enable the ARM Cortex to be paired with it's larger relatives in a ARM big.
   \end{tabular}
 \end{table}
 
-\section{Algorithms}
-Here I will write about the algorithms used in the experiments.
+\section{2D-Convolution}
+Convolution is a mathematical operation to combine two functions into a thirds output function.
+The resulting output function maintain properties from both the input functions.
+It is useful in a wide range of problems within mathematics, statistics, electrical engineering and computer science.
+An example computer vision, which can use convolutions to filter data.
+Use an image as the first input and a sobel filter as the second.
+The output would then be an image with all emphasized.
+
+2D-Convolution on discrete input data will have an output with each pixel [m,n] defined as:
+
+\begin{equation} \label{eq:2dconvolutionpixel}
+  y[m,n] = x[m,n] \times h[m,n] = \sum\limits_{j=-\infty}^\infty \sum\limits_{i=-\infty}^\infty input[i,j] \times filter[1-i, 1-j]
+\end{equation}
+
+The limits are in reality smaller than $\infty$ as they can be set to the size of the input image and filter.
+2D-Convolution is convenient for this paper, as each pixel of the output is independent.
+Each pixel or small group of pixels can made a task in OmpSs.
+
+In the implementation of 2D-Convolution used in this thesis, equation \ref{eq:2dconvolutionpixel} is run for each pixel in the input image.
+The limits are set to the size of the input.
+
+\begin{equation} \label{eq:2dconvolution}
+  Y = X \times H = \sum\limits_{m=0}^W \sum\limits_{n=0}^H \sum\limits_{j=0}^{w} \sum\limits_{i=0}^{h} input[i,j] \times filter[1-i, 1-j]
+\end{equation}
+
+The 4 loops in equation \ref{eq:2dconvolution} show that the number of operations in this problem is $W\times H\times w\times h$.
+This is a time complexity of $\mathcal{O}(n^4)$ when W=H=w=h\cite{PrinciplesOfDigitalImage}. %cite nr. 52 in Tronds report
 
