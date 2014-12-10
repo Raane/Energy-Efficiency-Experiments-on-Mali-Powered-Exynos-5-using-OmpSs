@@ -119,7 +119,7 @@ The thesis lay a lot of the ground for this pilot project and planned master the
     \midrule
     \textbf{Operating system} &  \\
     Distribution              & Linux Ubuntu \\
-    Version                   & TODO \\
+    %Version                   & TODO \\
     \bottomrule
   \end{tabular}
   \caption{Arndale Duo Specifications\label{overflow}}
@@ -135,6 +135,7 @@ The ODROID-XU3 is a new single-board computing system, offering interesting prop
 The system has an Exynos 5422 heterogeneous Soc.
 Exynos 5422 has a quad core ARM Cortex-A15 CPU and a ARM Mali T-628 GPU, but also a smaller quad core ARM Cortex-A7 processor.
 These 3 different processing units can be used simultaneously to solve problems.
+They use ARMs big.LITTLE architecture to achieve this heterogeneous system.
 In this paper, and the planned master thesis following it, the potency of this kind of heterogeneous processor will be explored.
 This is the system that will run most of the experiments, including all energy efficiency experiments.
 
@@ -211,7 +212,7 @@ This mean that problems with parallel parts, can be solved efficiently utilizing
 \subsection{ARM Cortex-A15}
 \begin{table}[H]
   \begin{tabular}{ll}
-    Performance       & 1.0 GHz to 2.5GHz  \\
+    Frequency         & 1.0 GHz to 2.5GHz  \\
     L1 Cache          & 64KB \\
     L2 Cache          & 4 MB \\
     L3 Cache          & None in core, may be implemented shared in multi core system. \\Architecture      & ARMv7-A            \\
@@ -232,7 +233,7 @@ The ARM Cortex-A7 is designed to be a low power alternative to the ARM Cortex-A1
 This enable the ARM Cortex to be paired with it's larger relatives in a ARM big.LITTLE configuration.
 \begin{table}[H]
   \begin{tabular}{ll}
-    Performance       & 1.2 GHz to 1.6GHz  \\
+    Frequency         & 1.2 GHz to 1.6GHz  \\
     L1 Cache          & 8-64KB \\
     L2 Cache          & up to 1 MB \\
     L3 Cache          & None in core, may be implemented shared in multi core system. \\
@@ -252,7 +253,7 @@ This enable the ARM Cortex to be paired with it's larger relatives in a ARM big.
 \subsection{ARM Mali T604}
 \begin{table}[H]
   \begin{tabular}{ll}
-    Performance       & 533 MHz\\
+    Frequency         & 533 MHz\\
                       & 17 GFLOPS  \\
     Multi core support & 1-4 cores  \\
     API Support       & OpenGL 1.1, 2.0, 3.0 and 3.1  \\
@@ -267,7 +268,7 @@ This enable the ARM Cortex to be paired with it's larger relatives in a ARM big.
 \subsection{ARM Mali T628}
 \begin{table}[H]
   \begin{tabular}{ll}
-    Performance       & 533/695 MHz \\
+    Frequency         & 533/695 MHz \\
                       & 17/23.7 GFLOPS \\
     Multi core support & 1-8 cores  \\
     API Support       & OpenGL 1.1, 2.0, 3.0 and 3.1  \\
