@@ -87,6 +87,8 @@ It's feature set and properties are elaborated in section \fullref{OdroidXU3}.
 \section{Compilation and running of test benches}
 Mention frequency scaling here.
 
+sudo bash -c 'echo 0 > /sys/devices/system/cpu/cpu5/online'
+
 \section{Performance measurement}
 In the experiments being run in this pilot project, execution time was used as the primary metric for performance.
 While running the experiments, the POSIX function gettimeofday() is used before and after running the main part of the application.

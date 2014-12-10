@@ -2,7 +2,42 @@
 % !TEX spellcheck = en-US
 \chapter[Background]{Background}
 
-\section{Energy measurement} \label{energymeasurement}
+\section{Energy efficiency} \label{energymeasurement}
+Computers consume energy.
+Achieving low energy consumption is an area of great interest, both in super computers where power is expensive and in consumer hardware where low power mean longer battery life.
+The energy consumption of a system depend both on hardware and software.
+The hardware of the system will typically run within a narrow range of voltages, and the components of the system have some current drag when they are working.
+The programmer can not affect how large these values are.
+What can be done however, is to ensure that the software does not consume energy unnecessary.
+The some of the components in the system that are not used can be turned off.
+Some of the features of a processor may also cause it to consume more power.
+An example is NEON vector instructions, which have been shown to increase the power usage of the system by up to 20\%\cite{TrondIngeLillesand} when used.
+Turning off components or features does save power, but there will often be a performance loss.
+When energy efficiency is a goal, there is always questions about how much power can be saved before the execution time is extended so much that there is a total loss in power consumed.
+Because of this, it is interesting to analyze programs with regard to energy consumption.
+
+\subsubsection{Energy measurement}
+There as mentioned, the interesting power properties of a system is voltage and current.
+In systems featuring sensors for such data, the data can be gathered while executing a program.
+By analyzing the data it is possible to optimize the program for energy efficiency.
+
+The power of the system is the product of the voltage and current.
+This is interesting to observe in applications that run when the system is standing by.
+When execution time doesn't matter, the energy consumed per time is what matter.
+
+Often the system is executing a program for a duration, and as soon as it is done the system can be shut down.
+In such cases it is interesting to measure how much energy the system consumed during execution.
+The product of the systems power and the problems execution time, is the total amount of energy consumed.
+
+There are many cases where a balance between energy efficiency and the performance trade off is interesting.
+This is when the energy delay product of the system become interesting.
+This is valid both for scientific experiments and programs executed on regular systems.
+In research experiments the goal may be to obtain energy efficiency or performance.
+In either case, it is sensible to remember that the actual goal will normally be a balance between the two.
+On regular systems in real life applications, both energy and performance matter.
+Users does not want to wait longer than necessary for the system to complete its task.
+Neither do they want the system to run out of battery or the power bill to grow too big.
+The energy delay product of a system is calculated by multiplying the execution time of the application with its energy.
 
 \section{NEON}
 NEON is a general-purpose single input multiple data (SIMD) technology implemented in the ARM Cortex A series of processors.
