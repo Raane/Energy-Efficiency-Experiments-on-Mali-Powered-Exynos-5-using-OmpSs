@@ -60,13 +60,13 @@ These are the results of running 2D-Convolution with 8 as the loop unroll on dif
 \begin{figure}[H]
   \centering
   \includegraphics[width=160mm]{fig/execution-time-configurations.eps}
-  \caption{Execution time of 2D-Convolution on different processor configurations. \label{overflow}}
+  \caption{Execution time of 2D-Convolution on different processor configurations. All results are from ODROID-XU3 were nothing is specified. The Arndale Duo is running at both it's ARM Cortex-A15 cores. The ARM Cortex-A15 cores of the ODROID-XU3 are running at 2.0 GHz, while they are running at 1.7 GHz on the Arndale Duo. \label{overflow}}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=160mm]{fig/mpixelss-configurations.eps}
-  \caption{MPixels/s of 2D-Convolution running on different processor configurations. \label{overflow}}
+  \caption{MPixels/s of 2D-Convolution running on different processor configurations. All results are from ODROID-XU3 were nothing is specified. The Arndale Duo is running at both it's ARM Cortex-A15 cores. The ARM Cortex-A15 cores of the ODROID-XU3 are running at 2.0 GHz, while they are running at 1.7 GHz on the Arndale Duo. \label{overflow}}
 \end{figure}
 
 \begin{table}[H]
@@ -79,15 +79,37 @@ These are the results of running 2D-Convolution with 8 as the loop unroll on dif
     1x Cortex-A7 and 4x Cortex-A15    & 16.1658             & 4.1512\\
     1x Cortex-A7 and 1x Cortex-A15    & 41.1286             & 1.6316\\
     1x Cortex-A7                      & 229.3884            & 0.2925\\
+    Arndale Duo with 2x Cortex-A15    & 46.3942             & 1.4465\\
     \bottomrule
   \end{tabular}
-  \caption{Performance of 2D-Convolution with different processor configurations. \label{overflow}}
+  \caption{Performance of 2D-Convolution with different processor configurations. All results are from ODROID-XU3 were nothing is specified. The ARM Cortex-A15 cores of the ODROID-XU3 are running at 2.0 GHz, while they are running at 1.7 GHz on the Arndale Duo. \label{overflow}}
 \end{table}
 
+As was to be expected, the large cores perform a lot better than the small ones.
+Running the system with all 8 cores powered perform 3.7 times better than the small cores alone.
+This is a large performance trade off, but the cores are still useful if they have a low enough power consumption.
 
-4 x 1 A7 is worse than 1 x 4 A7
-4 X 1 stk A7 + 1 stk A15 is better than 4 stk A7 and 4stk A15
-All processors perform 3.7 times better than only the small cores.
+An interesting result here is that adding cores scale sub linearly.
+The performance of 4 ARM Cortex-A7 cores and 4 ARM Cortex-A15 is only 3.19 times better than a single ARM Cortex-A7 and a single ARM Cortex-A15.
+The reason behind this is likely to be related to memory congestion.
+Even though 2D-Convolution is embarrassingly parallel, processor communication is not the only overhead with parallelization.
+When running more processors, there are more processors to fight over the memory bandwidth.
+This problem is likely to worsen with other more memory intensive problems, and problems with worse cache utilization.
+This may lead to some situations where processor configurations, that does not perform well with 2D-Convolution, are well suited.
+It would be interesting to explore this in the planned master thesis following this pilot project.
+
+The performance of 4 ARM Cortex-A7 cores is 4.8 times better than a single ARM Cortex-A7.
+The small cores seem to scale better than the large ones.
+This may also be a result of the other tasks the operating system is running.
+With less processing power available, the fraction of time spent running the operating system increase.
+
+The performance experiments run on the older Arndale Duo board show that it have worse performance with its ARM Cortex-A15 cores than the ORDOID-XU3.
+The two high power cores on the Arndale board have lower performance than a low power and a high power processor on the ORDOID board.
+If we assume linear scaling and extrapolate, we see that a quad core ARM Cortex-A15 with Arndale specifications would reach a performance of 2.9 MPixels/s.
+On the ODROID-XU3, the similar setup with 4 ARM Cortex-A15 cores and an ARM Cortex-A7 core, had a performance of 4.2 MPixels/s.
+The gap between the two is too large to be attributed to the single ARM Cortex-A7.
+This performance difference is not surprising, as the Arndales cores run at a lower clock frequency.
+They are also paired with slower memory, which may also contribute to the lower performance.
 
 \section{Power measurements}
 As described in chapter \fullref{setupandmethodology}, separate energy measurements for the different SoC components were gathered during execution of the experiments.
@@ -183,7 +205,17 @@ While the energy consumption is a good energy measure in many situations, it is 
 As explained in section \fullref{energymeasurement} energy delay product measurements can be used to examine this trade off.
 These are the energy data from chapter \ref{energyconsumptionmeasurements} multiplied with the execution time of the respective application execution.
 
-TODO: Figure here.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=160mm]{fig/EDP-configurations.eps}
+  \caption{Energy delay product after execution the whole 2D-Convolution program with different processor configurations. Note that the EDP of the ARM Cortex-A7 goes beyond the scale of the graph with a value of 27658, to allow for better readability. The colors indicate different components, and the full height of each column is the accumulated energy delay product for the whole system.\label{overflow}} \label {EDP-configurations}
+\end{figure}
 
-TODO: Thoughts on figure here.
+These data clearly show that with energy delay product as out goal, running the fully powered system achieve the best results.
+The energy efficiency gain by switching to the smaller and more energy efficient processors, is not worth the performance trade off.
+This mean that for applications which require a balanced performance trade off, the more energy efficient Cortex-A7 cores will not be a great alternative.
+
+It is worth noting that the configuration running on only 1 of the small cores and all the large ones have a decent EDP.
+There may exist special cases where this processor configuration may be useful.
+It is also obvious that running on the single Cortex-A7 processor, while having the lowest power measurement, is unsuited for any application with performance demand.
 
