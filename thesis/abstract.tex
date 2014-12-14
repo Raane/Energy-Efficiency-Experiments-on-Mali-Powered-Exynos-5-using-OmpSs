@@ -4,17 +4,19 @@
 %%=========================================
 \addcontentsline{toc}{section}{Abstract}
 \section*{Abstract}
-In this thesis energy efficiency experiments are implemented in OmpSs a task based programming model system.
-Experiments are run on two seperate Exynos 5 SoC based platforms, with and without ARMs big.LITTLE heterogeneous architecture.
-Some performance experiments were run on Arndale Duo with a dual core ARM Cortex-A15.
+In this project, energy efficiency experiments are implemented in OmpSs, a task based programming model.
+The experiments are run on two separate Exynos 5 SoC based platforms, with and without ARMs big.LITTLE heterogeneous architecture.
+Some performance experiments were run on Arndale Board with a dual core ARM Cortex-A15.
 The goal of this was to get OmpSs running on a known platform, and attempt to recreate Trond Inge Lillesands results from his master thesis.
-The majority of the experiments were carried out on the ODROID-XU3 with 4 small Cortex-A7 cores and 4 large Cortex A-15 cores with ARMs big.LITTLE technology.
-ODROID-XU3 permited experiments with detailed energy readings executed on a range of different processor core configurations.
-The application used for the experiments is 2D-Concolution adapted for OmpSs.
-The application had already been used with success in an earlier project at the CARD group.
+The majority of the experiments were carried out on the ODROID-XU3 with 4 small Cortex-A7 cores and 4 large Cortex-A15 cores.
+They are able to run simultaneously with ARM's big.LITTLE technology.
+ODROID-XU3 permitted experiments with detailed energy readings executed on a range of different processor core configurations.
+The application used for the experiments is 2D-Convolution adapted for OmpSs.
+The application was chosen because it had already been used with success in an earlier project at the CARD group.
 
-The results show how large cores can be disabled to save energy, although there is a large performance trade off.
+The results show how large cores can be disabled to save energy, although with a large performance trade off.
 The total energy saved for the system running on only the small cores is significant.
+There is however a static energy consumption by the other system components, worsening the energy efficiency gain of running on the small cores.
 For real life applications, it is efficient to run applications requiring performance on the full system, while background processes and tasks with no deadline for completion, can be run with less power on the small cores alone.
-The task based programming model used by OmpSs proved a well suited for heterogeneous architectures without manually adapting the program.
+The task based programming model used by OmpSs proved well suited for heterogeneous architectures, without manually adapting the program.
 The results indicate that OmpSs did maintain high performance and energy efficiency on the heterogeneous system, and scaled well as the number of cores was increased.

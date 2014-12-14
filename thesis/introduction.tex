@@ -4,10 +4,10 @@
 \chapter[Introduction]{Introduction}
 \section{Motivation}
 Increase of performance and power efficiency are the main goal of processor designers.
-Unfortunately we are currently reaching the limits of the current strategies for further development.
-For some time, our processors have been struggling to achieve increased performance.
-Heat stops us from driving the clock frequency higher, while memory is lagging more and more behind.
-A solution to enable continued performance growth is multi core processors, and for the last decade this has been the focus.
+Unfortunately we are currently reaching the limits of our current techniques.
+For some time, hardware developers have been struggling to achieve increased performance.
+Heat prevent us from driving the clock frequencies higher, while memory performance is lagging more and more behind.
+A solution to enable continued performance growth is multi core processors, and for the last decade this has been the focus of research.
 Unfortunately adding cores will not be a sustainable solution forever.
 As the amount of cores grow, they are still competing for the same system resources and may have to wait for each other to complete calculations on data with dependencies.
 
@@ -15,19 +15,20 @@ A promising solution to this issue is heterogeneous multi-processor systems.
 Heterogeneous multi-processor systems utilize multiple different processor cores in the same system.
 This allow different parts of a program to be executed on a suitable processor.
 By using a suitable core for each part of the program it is possible to achieve better performance than homogeneous multi-processor systems.
+Programming of such systems is challenging, but task based programming may be a solution.
 
 \section{Project Scope and Goal}
 This pilot projects main goal is to do preliminary research and experiments on the energy efficiency of the Exynos 5 processor, with the intent to use the results next spring in my master thesis.
-The goal of this research is to explore the potential of the task based programming model heterogeneous multi-processor systems.
+The goal of this research is to explore the potential of the task based programming model on heterogeneous multi-processor systems.
 
 \section{Problem Statement Interpretation and Approach}
 \begin{itemize}
-  \item Task 1: Get the OmpSs task base programming model framework running on both test platforms.
+  \item Task 1: Get the OmpSs task based programming model framework running on both test platforms.
   \item Task 2: Implement or adapt a suitable experiment application for testing energy efficiency.
-  \item Task 3: Implement some energy efficiency measurement application for both ODROID-XU3.
+  \item Task 3: Implement some energy efficiency measurement application for ODROID-XU3.
   \item Task 4: Optimize experiment applications for both platforms.
   \item Task 5: Gather performance and energy efficiency results from the experiment applications on both platforms.
-  \item Task 6: Analyze and present experiment results.
+  \item Task 6: Analyze, present and discuss experiment results.
 \end{itemize}
 
 \subsubsection{Task 1}
@@ -36,27 +37,27 @@ It is essential to get the OmpSs framework, which will be used in the experiment
 This task should be solved before progressing any further, as any issues here would render further work useless.
 
 \subsubsection{Task 2}
-To be able to determine anything about the potency of the task based programming model on our test platforms, we need test application.
+To be able to determine anything about the potency of the task based programming model on our test platforms, we need a test application.
 The application should be suitable for the parallel environment of our test platforms, and include some kind of performance metric.
 The purpose of developing or adapting such an application is to have a way of gathering data about the platform.
-As a result of this, it is not important what the application itself does.
+As a result of this, it is not important what the application does, as long as it does something meaningful.
 
 \subsubsection{Task 3}
-The ODROID-XU3 include current sensors.
+The ODROID-XU3 include current and voltage sensors.
 Recording data from these sensors during experiment execution will be the source of energy metrics.
-A software solution to gather these data will have to be implemented before any of the data necessary for the rest of the thesis can be gathered.
+A software solution to gather these data will have to be implemented before any of the data necessary for the rest of the project can be gathered.
 
 \subsubsection{Task 4}
 Parallel applications will always behave different on different platforms.
 It is possible to manually tune such applications to specific platforms.
-This is work that can be done very thoroughly, but this is time consuming work that is not the main goal of this thesis.
+This is work that can be done very thoroughly, but this is time consuming work that is not the main goal of this project.
 There should at least be made an effort to make some optimizations to the applications, to ensure that they are performing well on the test platforms.
 
 \subsubsection{Task 5}
-When all preceding steps are completed, it is time to gather some actual data.
+When all preceding steps are completed, it is time to gather data.
 The application from task 2 should be tuned with the optimizations from task 4.
 Then it should be executed with the energy measurements tool from task 3.
-The resulting data should hopefully contain interesting information to discuss in the thesis.
+The resulting data should hopefully contain interesting information to discuss.
 
 \subsubsection{Task 6}
 The data from the application should be analyzed.
@@ -66,36 +67,36 @@ There will be many comparisons to make here.
 The promising results should be elaborated, and their potential discussed.
 
 \section{Outline}
-This is the outline of the report, explaining what each part of it contain.
-In addition to these sections, there is also a problem statement, acknowledgments and abstract available on the first three pages.
+This is the outline of the report, explaining what each part of it contains.
+
 \subsubsection{Introduction}
 In the introduction chapter, the report and it's purpose are introduced.
-The motivation of the paper is presented, together with the goal of it.
+The motivation of the paper is presented, together with its goal.
 There is also an explanation of how the problem was interpreted and approached.
 
 \subsubsection{Background}
 In the background chapter, existing theory and related work is presented.
-Most of the general concepts necessary to understand the rest of the paper is presented briefly.
+Most of the general concepts necessary to understand the rest of the project is presented briefly.
 The main areas explained are energy efficiency and measurements, vector instructions, the task based programming model and heterogeneous multi-processors.
 In addition, the experiments used in the paper and the platforms they were run on are introduced.
 
 \subsubsection{Setup and methodology}
 In the setup and methodology chapter, the technical details about how the experiments were run are explained.
-This include listings of software used, with version numbers and details on how it was used, including flags used for experiment compilation.
+This includes listings of software used, with version numbers and details on how it was used, including flags used for experiment compilation.
 There are also explanations about how performance and energy efficiency measurement were gathered.
 
 \subsubsection{Results and discussion}
 In this chapter the results of the experiments are presented and discussed.
 The experiments presented are covering optimizations, performance, and power and energy measurements.
-The discussion elaborate what the results mean for the potency of task based programming on heterogeneous multi-processors.
+The discussion elaborates what the results mean for the potential of task based programming on heterogeneous multi-processors.
 
 \subsubsection{Conclusion}
-In this chapter the conclusions we are able to draw from the discussions.
-Central here are the results indicating the potency of task based programming on heterogeneous multi-processors.
+In this chapter the conclusions we are able to draw from the discussions are presented.
+Central here are the results indicating the potential of task based programming on heterogeneous multi-processors.
 
 \subsubsection{Future work}
-In the future work chapter, the unexplored aspects of the research is presented.
-There are a lot of tasks that were not included in this projects scope, as this was a pilot project.
+In the future work chapter, the unexplored aspects of the research are presented.
+There are a lot of tasks that were not included in this project's scope, as this was a pilot project.
 Many of these tasks will hopefully be addressed in the planned master thesis built on what was learned from this project.
 These tasks are presented in this chapter.
 

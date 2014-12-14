@@ -10,7 +10,7 @@ The 2D-Convolution test application is compiled with the following command:
 This generate an executable which can be run without any flags.
 
 \section{Configuring processor cores}
-The processor cores can of the Exynos 5422 can be turned on and off with the system running.
+The processor cores of the Exynos 5422 can be turned on and off with the system running.
 Turning off a processor core is done by the operating system without the process noticing that it was moved.
 Because of this it is possible to run different parts of a program in different processor configurations.
 
@@ -40,4 +40,6 @@ Using this scheme for power measurement, we are able to get readings with high p
 The results will show how the consumption vary with different application configurations both for the application as a whole and for different stages of execution.
 
 $ Power\ consumption (Watt) = Current (Ampere) \times Voltage (Volt) $
-
+\\
+There is no way to avoid affecting performance with the energy measurements.
+To keep accuracy high with minimal interferance with the problem exection, a delay of 200ms between each measurement was used.

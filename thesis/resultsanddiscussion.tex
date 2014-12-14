@@ -2,11 +2,12 @@
 %!TEX root = thesis.tex
 % !TEX spellcheck = en-US
 \chapter[Result and Discussion]{Result and Discussion}
-In this chapter the results of the experiments described in earlier chapters are presented.
+In this chapter the results of the experiments described in earlier chapters are presented discussed.
 The chapter is divided into three sections, covering the 3 different types experiments that were run.
 First the experimental optimization towards our systems properties are presented.
 Then the experiment results regarding system performance will be presented.
 Finally the results regarding the systems energy efficiency are presented.
+The performance trade off from running energy efficient is also asserted here.
 
 \section{Optimization}
 Different systems may perform better with different programs.
@@ -16,8 +17,8 @@ This reduce the overhead of initiating iterations.
 It also reduce overhead related to loop control, like end of loop tests and loading data into new memory locations necessary for each loop iteration.
 There is however a limit to how much unrolling can be done.
 At some point the size of the task will create difficulties like early cache eviction of data.
-The appropriate amount of cache may vary from system to system.
-Because of this, experiments were run with different unroll degrees, and on all the processor configurations that will be used for later experiments.
+The optimal amount of loop unrolling may vary from system to system.
+Because of this, experiments were run on all the processor configurations that will be used for later experiments, with different unroll degrees.
 
 \begin{figure}[H]
   \centering
@@ -87,13 +88,13 @@ These are the results of running 2D-Convolution with 8 as the loop unroll on dif
 
 As was to be expected, the large cores perform a lot better than the small ones.
 Running the system with all 8 cores powered perform 3.7 times better than the small cores alone.
-This is a large performance trade off, but the cores are still useful if they have a low enough power consumption.
+This is a large performance trade off, but the small cores are still useful if they have a low enough power consumption.
 
 An interesting result here is that adding cores scale sub linearly.
 The performance of 4 ARM Cortex-A7 cores and 4 ARM Cortex-A15 is only 3.19 times better than a single ARM Cortex-A7 and a single ARM Cortex-A15.
 The reason behind this is likely to be related to memory congestion.
 Even though 2D-Convolution is embarrassingly parallel, processor communication is not the only overhead with parallelization.
-When running more processors, there are more processors to fight over the memory bandwidth.
+When running more processors, there are more processors to fight over the memory bandwidth and cause congestion.
 This problem is likely to worsen with other more memory intensive problems, and problems with worse cache utilization.
 This may lead to some situations where processor configurations, that does not perform well with 2D-Convolution, are well suited.
 It would be interesting to explore this in the planned master thesis following this pilot project.
@@ -102,6 +103,7 @@ The performance of 4 ARM Cortex-A7 cores is 4.8 times better than a single ARM C
 The small cores seem to scale better than the large ones.
 This may also be a result of the other tasks the operating system is running.
 With less processing power available, the fraction of time spent running the operating system increase.
+Because of this, there is reason to suspect that the small cores don't really scale as well as the results indicate.
 
 The performance experiments run on the older Arndale Duo board show that it have worse performance with its ARM Cortex-A15 cores than the ODROID-XU3.
 The two high power cores on the Arndale board have lower performance than a low power and a high power processor on the ODROID board.
@@ -113,24 +115,27 @@ They are also paired with slower memory, which may also contribute to the lower 
 
 \section{Power measurements}
 As described in chapter \fullref{setupandmethodology}, separate energy measurements for the different SoC components were gathered during execution of the experiments.
-The each of the 4 components value was logged every 200 ms.
+Each of the 4 components value was logged every 200 ms.
 In figure \ref{powerovertime} you can see the raw energy measurements for a single execution of 2D-Convolution running on all 8 processors.
 We can here observe the energy consumption of the program throughout the execution for different components.
 The total energy consumption can be calculated from the data.
-But observations regarding power usage during different execution stages can also be analyzed.
+Observations regarding power usage during different execution stages can also be analyzed.
 The same kind of data were gathered for a range of different processor configurations.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=160mm]{fig/power-over-time.eps}
-  \caption{Power consumption for the large and small cores during execution of 2D-Convolution with unroll 8x. This is a full execution running on all 8 processors. \label{overflow}}\label{powerovertime}
+  \caption{Power consumption for the large and small cores during execution of 2D-Convolution with unroll 8x. These results are from a full execution running on all 8 processors. \label{overflow}}\label{powerovertime}
 \end{figure}
 There is a spike in power consumption on both the small and large cores at the start of the execution.
 This spike can be caused by a lot of different reasons.
 There is not enough data to know what caused it.
-Typical reasons for such spikes are intense operations during initiation of the program, or simply hardware implementations causing a power surge when processor cores are suddenly powered from idle state.
+Typical reasons for such spikes are intense operations during initiation of the program, or simply hardware implementations causing a power surge when processor cores are suddenly powered up from idle state.
 For the rest of the execution there are variations in power consumption, but the consumption vary around the same general level.
 
+\section{Average power measurements}
+Using the data gathered for each component in different processor configurations we can examine their efficiency.
+These data are presented in figure \ref{power-configurations}.
 \begin{figure}[H]
   \centering
   \includegraphics[width=160mm]{fig/power-configurations.eps}
@@ -152,15 +157,14 @@ For the rest of the execution there are variations in power consumption, but the
   \end{tabular}
   \caption{Execution time of 2D-Convolution with different degrees of loop unrolling on different processor configurations. \label{overflow}}
 \end{table}
-Using the data gathered for each component in different processor configurations we can examine their efficiency.
-These data are presented in figure \ref{power-configurations}.
 
 As expected we see that the power of the ARM Cortex-A7s is a lot lower than the power of the ARM Cortex-A15.
 Turning off the power hungry Cortex-A15s reduce the total power to a sixth (0.17).
-This is useful for applications running that do not require high performance, but want to consume low power.
+This is useful for applications running that do not require high performance, and  want to consume low power.
 This way of power saving can be increased even more by utilizing only a single Cortex-A7.
 This configuration is have the lowest power consumption per second, and is useful for standing by, or executing minor calculations while standing by.
 Running on only a single Cortex-A7 reduce the power of the system to a tenth (0.10) of that of the fully powered 8 core system.
+More than half of this power was used by other components.
 
 In addition to the total power of the system, the results also allow us to analyze the power of each component.
 Turning off 3 Cortex-A15 cores only reduce the power to about half (0.51).
@@ -185,7 +189,7 @@ The data height of each column is the amount of energy consumed.
   \caption{Total energy consumption execution the whole 2D-Convolution program. The colors indicate different components, and the full height of each column is the accumulated total power consumed for the whole system.\label{overflow}} \label {power-consumed-configurations}
 \end{figure}
 
-The data here show that, even though the fully powered system with all eight processors operating performed better than all the other processor configurations, it is not the best at energy consumption.
+Figure \ref{power-consumed-configurations} show that, even though the fully powered system with all eight processors operating performed better than all the other processor configurations, it is not the best at energy consumption.
 The power consumed by a full execution of 2D-Convolution on all 8 processors consume 60\% more power than running it on the 4 Cortex-A7 cores alone.
 Running on the more energy efficient, processors cost performance, but it save energy.
 This is a trade off that is often observed in energy efficiency.
@@ -198,7 +202,7 @@ All the other processor configurations had higher energy consumption than the tw
 They their performance was also worse than the full system, which completed the execution with a lower power consumption.
 In other words, they did neither stand out in energy efficiency or performance.
 There may exist potential situations with very specific maximum execution times and such, where these configurations may be viable.
-They are however not promising candidates for general load distribution strategies.
+They are however not promising candidates for general applications.
 
 \section{Energy Delay Product (EDP) measurements} \label{EDP}
 While the energy consumption is a good energy measure in many situations, it is often interesting to compare the energy consumed with it's performance trade off.
@@ -213,7 +217,7 @@ These are the energy data from chapter \ref{energyconsumptionmeasurements} multi
 
 These data clearly show that with energy delay product as out goal, running the fully powered system achieve the best results.
 The energy efficiency gain by switching to the smaller and more energy efficient processors, is not worth the performance trade off.
-This mean that for applications which require a balanced performance trade off, the more energy efficient Cortex-A7 cores will not be a great alternative.
+This mean that for applications which require a balanced performance trade off, the more energy efficient Cortex-A7 cores will not be a great alternative in most cases.
 
 It is worth noting that the configuration running on only 1 of the small cores and all the large ones have a decent EDP.
 There may exist special cases where this processor configuration may be useful.

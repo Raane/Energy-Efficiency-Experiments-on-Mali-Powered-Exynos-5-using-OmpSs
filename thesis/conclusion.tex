@@ -2,20 +2,20 @@
 %!TEX root = thesis.tex
 % !TEX spellcheck = en-US
 \chapter[Conclusion]{Conclusion}
-In this thesis, the performance and energy efficiency of the heterogeneous Samsung Exynos 5244 running parallel programs with a task based programming model.
-The potency of different configurations of the processor cores was explored.
+In this thesis, the performance and energy efficiency of the heterogeneous Samsung Exynos 5 running parallel programs with a task based programming model.
+The potency of different configurations of processor cores was explored.
 The goal was to uncover the energy efficiency potential of using OmpSs, as well as exploring heterogeneous processors in such use cases.
 2D-Convolution was used as a experiment application, as it is easily parallelizable and fit the task based programming model well.
 The OpenMP Super Scalar programming model from developed mainly by Barcelona Supercomputing Center was used for the experiments.
 
-\subsection{Performance}
+\section{Performance}
 Several combinations of the large ARM Cortex-A15 cores and small ARM Cortex-A7 cores were tested.
 The results showed that there is a large performance trade off by turning off the large cores.
 The performance drop demand great energy savings before the core configuration is worth it.
 It was also discovered that the performance of the processors scale well, but not quite linearly.
 This mean that there is potential in exploring applications where parallelization overhead may demand toggling cores dynamically to gain performance.
 
-\subsection{Energy efficiency}
+\section{Energy efficiency}
 The small processor cores proved to have a lot lower power than the large ones.
 This give them both use for low power standby applications, as well as applications where energy is more important than performance.
 The total energy consumed by a full execution of 2D-Convolution was lowest when running on only the 4 small cores.
@@ -24,6 +24,6 @@ When there is a necessity for balance between performance and energy, the fully 
 The energy delay product of the fully powered system was clearly best for the full system.
 It is however likely that there exist many applications, that do not parallelize as well as 2D-Convolution, which will perform better at other processor configurations.
 
-\subsection{Heterogeneous multi-processors and the task based programming model}
-The experiments showed that using OmpSs for parallelization works well also on heterogeneous systems.
-When the number of processors was varied, the performance scaled well.
+\section{Heterogeneous multi-processors and the task based programming model}
+The experiments showed that using OmpSs for parallelization works well on heterogeneous systems.
+When the number of processors was varied, both the performance and energy efficiency scaled well.
