@@ -12,24 +12,27 @@ This generate an executable which can be run without any flags.
 \section{Configuring processor cores}
 The processor cores of the Exynos 5422 can be turned on and off with the system running.
 Turning off a processor core is done by the operating system without the process noticing that it was moved.
+The program will simply be moved, and complete its task on a new processor core.
 Because of this it is possible to run different parts of a program in different processor configurations.
 
 Turning on and off a processor core is done by writing wither a 0 or 1 to /sys/devices/system/cpu/cpuN/online.
 Processor 0-3 are the 4 ARM Cortex-A7 cores.
 Processor 4-7 are the 4 ARM Cortex-A15 cores.
-It is not possible to turn processor 0 off, and because of this it is left running in all experiments.
+It is not possible to turn processor 0 off by writing a 0 to the corresponding file.
+Because of this it is left running in all experiments.
+In future work on the platform, other methods for turning off processor 0 may be tried.
 This is an example of a command that will turn off processor 5:
 
 \texttt{sudo bash -c 'echo 0 > /sys/devices/system/cpu/cpu5/online'}
 
 \section{Performance measurement}
 In the experiments being run in this pilot project, execution time was used as the primary metric for performance.
-While running the experiments, the POSIX function gettimeofday() is used before and after running the main part of the application.
+While running the experiments, the POSIX function gettimeofday() is used before and after running the region of interest.
 The time difference is a used as a measurement of how good the performance is.
 
 In the planned master thesis, PAPI (Performance API) may be used to measure more detailed aspects of the performance.
 PAPI is able to access a lot of different performance measurements from systems.
-The available metrics include Cache utilization and hit rate, memory utilization, bus utilization and others.
+The available metrics include cache utilization and hit rate, memory utilization, bus utilization and others.
 
 \section{Energy measurement on ODROID-XU3}
 As elaborated in section \fullref{OdroidXU3}, the ODROID-XU3 feature 4 current sensors.
