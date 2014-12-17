@@ -45,10 +45,12 @@ In either case, it is sensible to remember that the actual goal will normally be
 On regular systems in real life applications, both energy and performance matter.
 Users do not want to wait longer than necessary for the system to complete its task.
 Neither do they want the system to run out of battery, or the power bill to grow too big.
-The energy delay product of a system is calculated by multiplying the execution time of the application with its energy, as shown in Equation \ref{eq:edp}.
+
 \begin{equation} \label{eq:edp}
   Energy\ delay\ product = Energy \times Execution\ time
 \end{equation}
+
+The energy delay product of a system is calculated by multiplying the execution time of the application with its energy, as shown in Equation \ref{eq:edp}.
 
 \section{NEON}
 NEON is a general-purpose single input multiple data (SIMD) technology implemented in the ARM Cortex-A series of processors.
@@ -78,7 +80,7 @@ This model even allow the tasks to run on different types of processors in a het
 OpenMP Super scalar (OmpSs) is a extension of the OpenMP API to integrate features from the StarSs programming model.
 It is currently under development at the Barcelona Supercomputing Center.
 The goal of OmpSs is to extend the programming model to support a wide range of processors.
-The OmpSs programming model run on a wide variety of different systems, such as traditional personal computers, clusters, shared memory systems and heterogeneous processors.
+The OmpSs programming model run on a wide variety of different systems, such as traditional personal computers, clusters, shared memory systems and heterogeneous processors \cite{ompssmanual}.
 While the software is not yet completed or fully tested, there have been several reports exploring it's potential \cite{lillesand13}\cite{natvig12}.
 The results have proven OmpSs as an efficient solution on a wide range of platforms.
 
@@ -95,6 +97,24 @@ Unfortunately they also introduce several new challenges.
 Both regular programs and operating systems can demand changes to be able to utilize such systems.
 
 \section{ARM big.LITTLE} \label{bigLITTLE}
+ARM big.LITTLE is a power-optimization technology that allow ARM processors with a common instruction set and feature set, but with different performance, to cooperate.
+A system with ARM big.LITTLE will feature high performance processor cores, which meet the performance demand from modern systems.
+It will also feature energy efficiency tuned low power cores with lower performance, which meet the energy efficiency demand of modern systems.
+It is possible to run high performance applications on the large processors, or even both the large and small processors simultaneously.
+Applications demanding less performance can be run without use of the high performance cores.
+In this way the system can save power, and increase battery life or lower the power bill of the system.
+
+When utilizing systems with ARM big.LITTLE, it is not necessary for the programmer to specifically program for this system.
+Big.LITTLE MP is an underlaying software that will automatically and seamlessly move workloads between processor cores.
+When the system is running general parallel problems, the added small cores in systems can give a performance increase of over 40\%.
+At the same time, tasks with low performance demand can exhibit power savings in the range of 30\%-50\% on the SoC level \cite{jeff13}.
+In Figure \ref{bigLITTLEarchitecture} the typical architecture of a typical ARM big.LITTLE system with Cortex-A15 cores and Cortex-A7 cores are shown.
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=90mm]{fig/biglittle.png}
+  \caption{Big.LITTLE architecture with Cortex-A15 and Cortex-A7 cores. \label{bigLITTLEarchitecture}}
+\end{figure}
 
 \section{Experiment platforms}
 
@@ -108,7 +128,7 @@ The Arndale Board is the single board computing system shown in Figure \ref{Arnd
 It is fitted with an Exynos 5250 SoC, which contain a dual core ARM Cortex-A15 , as well as an ARM Mali-T604 GPU.
 This computer offer a range of supported Linux distributions, as well as the OmpSs programming model.
 The Arndale Board was used for some preliminary research in this project.
-It was chosen because we had experience from earlier student projects using this board.
+It was chosen because there was experience from earlier student projects using this board.
 The computer was used in the 2014 master thesis "Acceleration with OmpSs and Neon/OpenCL on ARM Processor" by Trond Inge Lillesand \cite{lillesand13}.
 The thesis lay a lot of the foundation for this pilot project and planned master thesis.
 In Table \ref{arndalespec} the system specifications of the board are listed.
@@ -372,5 +392,5 @@ This result Equation \ref{eq:2dconvolution} \cite{lillesand13}.
 \end{equation}
 
 The 4 loops in Equation \ref{eq:2dconvolution} show that the number of operations in this problem is $W\times H\times w\times h$.
-This is a time complexity of $\mathcal{O}(n^4)$ when W=H=w=h \cite{burger09}.
+This is a time complexity of $\mathcal{O}(h^4)$ when W=H=w=h \cite{burger09}.
 
