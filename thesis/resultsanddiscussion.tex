@@ -52,8 +52,8 @@ As the size of the loop body increase, the number of instructions for the loop i
 When the instructions no longer fit in cache, the execution of the loop will be halted to load more instructions each iteration.
 There is reason to suspect that this is the main reason for the performance loss at loop unroll degree 16.
 In addition data cache misses may also occur more often with larger loop bodies.
-In 2D-Convolution there are many read write operations in the loop body.
 As the amount of data accessed by each iteration grow, there may occur more cache misses.
+In 2D-Convolution there are many read write operations in the loop body, but they are accessing data in such an order that it should not result in an increased cache miss rate.
 
 \section{Performance}
 Even with energy efficiency as the focus, performance data are still interesting.
@@ -106,6 +106,7 @@ It would be interesting to explore this in the planned master thesis following t
 The performance of 4 ARM Cortex-A7 cores is 4.8 times better than a single ARM Cortex-A7.
 The small cores seem to scale better than the large ones.
 Super linear speedup when adding more cores to a problem, is often a result of each core having its own cache.
+The ARM Cortex-A7 each introduce an additional 32KB/32KB I/D L1 cache.
 More processors with cache give the system as a whole more available cache.
 This may also be a result of the other tasks the operating system is running.
 With less processing power available, the fraction of time spent running the operating system increase.
@@ -140,6 +141,11 @@ This spike can be caused by a lot of different reasons.
 There is not enough data to know what caused it.
 Typical reasons for such spikes are intense operations during initiation of the program, or simply hardware implementations causing a power surge when processor cores are suddenly powered up from idle state.
 For the rest of the execution there are variations in power consumption, but the consumption vary around the same general level.
+
+For this project the high level of details of the real time power measurements were not used to its full potential.
+In the planned master thesis building on this report, these measurements may be used for dynamic tuning of the system.
+It is possible to run parts of problems with different processor configurations, turning on and of cores as they are useful.
+By running each part of the program on the right configuration, there is a potential to save much power if a suitable application is used.
 
 \section{Average power measurements}
 Using the data gathered for each component in different processor configurations we can examine their efficiency.
@@ -179,8 +185,9 @@ Turning off 3 Cortex-A15 cores only reduce the power to about half (0.51).
 Even turning all the Cortex-A15 cores off still leave some power consumed by them.
 Because of this power, running the system with only four Cortex-A7 cores still spend 13\% of the total energy on the Cortex-A15 cores, which are not doing any work.
 Similarly turning off 3 Cortex-A7 cores only reduce power to a bit more than two thirds (0.35).
-These results reveal that the energy for each set of cores are not spent solely on powering the cores themselves, but also some peripheral components related to the cores.
-These peripheral components can not be turned partially of, and will consume some power when at least one core is on.
+These results reveal that the energy for each set of cores are not spent solely on powering the cores themselves, but also some shared elements related to the cores.
+These shared elements can not be turned partially of, and will consume some power when at least one core is on.
+An example of such shared elements are the ADB-400 bus to each group of processor cores and the L2 cache, which both can be viewed in Figure \ref{bigLITTLEarchitecture}.
 They even consume some power when the cores are all off.
 Because of this overhead power from partially powered processors, there rarely occur situations where this is optimal.
 The results for such processor configurations will be analyzed further in this project to observe whether or not this is the case here.

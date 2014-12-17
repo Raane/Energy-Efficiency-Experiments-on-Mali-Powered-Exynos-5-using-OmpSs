@@ -104,22 +104,22 @@ It is possible to run high performance applications on the large processors, or 
 Applications demanding less performance can be run without use of the high performance cores.
 In this way the system can save power, and increase battery life or lower the power bill of the system.
 
-When utilizing systems with ARM big.LITTLE, it is not necessary for the programmer to specifically program for this system.
-Big.LITTLE MP is an underlaying software that will automatically and seamlessly move workloads between processor cores.
-When the system is running general parallel problems, the added small cores in systems can give a performance increase of over 40\%.
-At the same time, tasks with low performance demand can exhibit power savings in the range of 30\%-50\% on the SoC level \cite{jeff13}.
-In Figure \ref{bigLITTLEarchitecture} the typical architecture of a typical ARM big.LITTLE system with Cortex-A15 cores and Cortex-A7 cores are shown.
-
-\begin{figure}[ht!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=90mm]{fig/biglittle.png}
   \caption{Big.LITTLE architecture with Cortex-A15 and Cortex-A7 cores. \label{bigLITTLEarchitecture}}
 \end{figure}
 
+When utilizing systems with ARM big.LITTLE, it is not necessary for the programmer to specifically program for this system.
+Big.LITTLE MP is an underlaying software that will automatically and seamlessly move workloads between processor cores.
+When the system is running general parallel problems, the added small cores in systems can give a performance increase of over 40\%.
+At the same time, tasks with low performance demand can exhibit power savings in the range of 30\%-50\% on the SoC level \cite{jeff13}.
+In Figure \ref{bigLITTLEarchitecture} the typical architecture of a typical ARM big.LITTLE system with Cortex-A15 cores and Cortex-A7 cores is shown.
+
 \section{Experiment platforms}
 
 \subsection{Arndale Board} \label{ArndaleBoard}
-\begin{figure}[ht!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=90mm]{fig/Arendale.jpg}
   \caption{Arndale Board \label{ArndaleBoardImage}}
@@ -386,6 +386,7 @@ This computation for each pixel or small group of pixels can made a task in OmpS
 In the implementation of 2D-Convolution used in this project, Equation \ref{eq:2dconvolutionpixel} is run for each pixel in the input image.
 The limits are set to the size of the input.
 This result Equation \ref{eq:2dconvolution} \cite{lillesand13}.
+Note that this is the mostly the same implementation as Lillesand used in him master thesis, but with some code added for energy efficiency measurements.
 
 \begin{equation} \label{eq:2dconvolution}
   Y = X \times H = \sum\limits_{m=0}^W \sum\limits_{n=0}^H \sum\limits_{j=0}^{w} \sum\limits_{i=0}^{h} input[i,j] \times filter[1-i, 1-j]
