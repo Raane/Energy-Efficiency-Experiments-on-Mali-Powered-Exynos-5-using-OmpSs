@@ -21,13 +21,21 @@ The interesting power properties of a system is voltage and current.
 In systems featuring sensors for such data, the data can be gathered while executing a program.
 By analyzing the data it is possible to optimize the program for energy efficiency.
 
-The power of the system is the product of the voltage and current.
+The power of the system is the product of the voltage and current, as shown in Equation \ref{eq:powerconsumptionbackground}.
 This is interesting to observe in applications that run when the system is standing by.
 When execution time doesn't matter, the energy consumed per time becomes the only important metric.
 
+\begin{equation} \label{eq:powerconsumptionbackground}
+  Power = Current \times Voltage
+\end{equation}
+
 Often the system is executing a program for a duration, and as soon as it is done the system can be shut down.
 In such cases it is interesting to measure how much energy the system consumed during execution.
-The product of the systems power and the problems execution time, is the total amount of energy consumed.
+The product of the systems power and the problems execution time, is as shown in Equation \ref{eq:energyconsumption} the total amount of energy consumed.
+
+\begin{equation} \label{eq:energyconsumption}
+  Energy\ consumption (Joule) = Power (Watt) \times Execution\ time (Second)
+\end{equation}
 
 There are many cases where a balance between energy efficiency and the performance trade off is interesting.
 This is when the energy delay product of the system become interesting.
@@ -37,7 +45,10 @@ In either case, it is sensible to remember that the actual goal will normally be
 On regular systems in real life applications, both energy and performance matter.
 Users do not want to wait longer than necessary for the system to complete its task.
 Neither do they want the system to run out of battery, or the power bill to grow too big.
-The energy delay product of a system is calculated by multiplying the execution time of the application with its energy.
+The energy delay product of a system is calculated by multiplying the execution time of the application with its energy, as shown in Equation \ref{eq:edp}.
+\begin{equation} \label{eq:edp}
+  Energy\ delay\ product = Energy \times Execution\ time
+\end{equation}
 
 \section{NEON}
 NEON is a general-purpose single input multiple data (SIMD) technology implemented in the ARM Cortex-A series of processors.

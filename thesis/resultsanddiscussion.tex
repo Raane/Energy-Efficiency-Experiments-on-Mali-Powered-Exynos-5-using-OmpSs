@@ -122,6 +122,8 @@ They are also paired with slower memory, which may also contribute to the lower 
 \section{Power measurements}
 As described in chapter \ref{setupandmethodology}, separate energy measurements for the different SoC components were gathered during execution of the experiments.
 Each of the 4 components value was logged every 200 ms.
+The Arndale Board does not feature any on board energy sensors, and measuring power for this board would have to be done for the board as a whole.
+As these results would not be comparable to the energy data from ODROID, they were not gathered.
 Figure \ref{powerovertime} show the raw energy measurements for a single execution of 2D-Convolution running on all 8 processors.
 We can here observe the energy consumption of the program throughout the execution for different components.
 The total energy consumption can be calculated from the data.
