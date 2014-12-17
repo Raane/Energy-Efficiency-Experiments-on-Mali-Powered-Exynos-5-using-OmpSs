@@ -25,6 +25,14 @@ This is an example of a command that will turn off processor 5:
 
 \texttt{sudo bash -c 'echo 0 > /sys/devices/system/cpu/cpu5/online'}
 
+\section{Choice of experiment platforms}
+When work on the project started, Arndale Board was used.
+The goal at the time was to run experiments on Arndale Board, and then expand to Arndale Octa Board.
+The Arndale Octa Board feature an Samsung Exynos 5420 SoC, which is almost identical to the Samsung Exynos 5422 on ODROID-XU3, but with somewhat lower performance.
+Then the time to start using the Arndale Octa Board came, we had just received the ODROID-XU3.
+It was decided that the Arndale Octa Board should be dropped in favor of the ODROID-XU3.
+This was because ODROID-XU3 is a newer board and feature the on board energy sensors used in this project.
+
 \section{Performance measurement}
 In the experiments being run in this pilot project, execution time was used as the primary metric for performance.
 While running the experiments, the POSIX function gettimeofday() is used before and after running the region of interest.

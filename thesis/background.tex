@@ -11,7 +11,7 @@ The programmer can not affect how large these values are.
 What can be done however, is to ensure that the software does not consume energy unnecessary.
 Some of the components in the system that are not used, can be turned off.
 Some of the features of a processor may also cause it to consume more power.
-An example is NEON vector instructions, which have been shown to increase the power usage of the system by up to 20\%%\cite{TrondIngeLillesand} when used.
+An example is NEON vector instructions, which have been shown to increase the power usage of the system by up to 20\% \cite{lillesand13} when used.
 Turning off components or features does save power, but there will often be a performance loss.
 When energy efficiency is a goal, there is always questions about how much power can be saved, before the execution time is extended so much that there is a total loss in energy consumed.
 Because of this, it is interesting to analyze programs with regard to energy consumption.
@@ -58,7 +58,7 @@ This will often open for great performance boost on problems like the one explor
 Each register may be filled with single precision floating point numbers ranging from 8 to 64-bit each.
 This mean that the programmer may choose to fill them with 16 8-bit numbers, 8 16-bit numbers, 4 32-bit numbers, 2 64-bit numbers or a single 128-bit number.
 This allows a single thread to achieve parallelism.
-In future generations of the ARM ISA there will be support for other data types as well %\cite{This need to be cited}.
+In future generations of the ARM ISA there will be support for other data types as well \cite{neondata}.
 Different implementations of NEON exist in the Cortex-A cores.
 While the even the simple implementations in smaller cores like the Cortex-A7 can give great performance boost, the implementations present in the newest cores are performing even better.
 The A15 offer two NEON units, and the instruction pipeline to start the cores are shorter than in simpler implementations.
@@ -79,8 +79,8 @@ OpenMP Super scalar (OmpSs) is a extension of the OpenMP API to integrate featur
 It is currently under development at the Barcelona Supercomputing Center.
 The goal of OmpSs is to extend the programming model to support a wide range of processors.
 The OmpSs programming model run on a wide variety of different systems, such as traditional personal computers, clusters, shared memory systems and heterogeneous processors.
-While the software is not yet completed or fully tested, there have been several reports exploring it's potential.
-The results have proven OmpSs as an efficient solution on both clusters and heterogeneous systems utilizing OpenCL and CUDA.
+While the software is not yet completed or fully tested, there have been several reports exploring it's potential \cite{lillesand13}\cite{natvig12}.
+The results have proven OmpSs as an efficient solution on a wide range of platforms.
 
 
 \section{Heterogeneous multi-processor}
@@ -94,23 +94,27 @@ This kind of processors have a potential to help us overcome the challenges that
 Unfortunately they also introduce several new challenges.
 Both regular programs and operating systems can demand changes to be able to utilize such systems.
 
+\section{ARM big.LITTLE} \label{bigLITTLE}
+
 \section{Experiment platforms}
 
 \subsection{Arndale Board} \label{ArndaleBoard}
 \begin{figure}[ht!]
   \centering
   \includegraphics[width=90mm]{fig/Arendale.jpg}
-  \caption{Arndale Board \label{overflow}}
+  \caption{Arndale Board \label{ArndaleBoardImage}}
 \end{figure}
-The Arndale Board is a computing system mounted on a single board.
+The Arndale Board is the single board computing system shown in Figure \ref{ArndaleBoardImage}.
 It is fitted with an Exynos 5250 SoC, which contain a dual core ARM Cortex-A15 , as well as an ARM Mali-T604 GPU.
 This computer offer a range of supported Linux distributions, as well as the OmpSs programming model.
 The Arndale Board was used for some preliminary research in this project.
 It was chosen because we had experience from earlier student projects using this board.
-The computer was used in the 2014 master thesis "Acceleration with OmpSs and Neon/OpenCL on ARM Processor" by Trond Inge Lillesand.
+The computer was used in the 2014 master thesis "Acceleration with OmpSs and Neon/OpenCL on ARM Processor" by Trond Inge Lillesand \cite{lillesand13}.
 The thesis lay a lot of the foundation for this pilot project and planned master thesis.
+In Table \ref{arndalespec} the system specifications of the board are listed.
 
 \begin{table}[h]
+  \centering
   \begin{tabular}{ll}
     \toprule
     \textbf{SoC}              & Samsung Exynos 5250 \\
@@ -136,24 +140,26 @@ The thesis lay a lot of the foundation for this pilot project and planned master
     %Version                   & TODO \\
     \bottomrule
   \end{tabular}
-  \caption{Arndale Board specifications\label{overflow}}
+  \caption{Arndale Board specifications\label{arndalespec}}
 \end{table}
 
 \subsection{ODROID-XU3} \label{OdroidXU3}
 \begin{figure}[H]
   \centering
   \includegraphics[width=90mm]{fig/ODROID.jpg}
-  \caption{ODROID-XU3 \label{overflow}}
+  \caption{ODROID-XU3 \label{ODROIDImage}}
 \end{figure}
-The ODROID-XU3 is a new single-board computing system, offering interesting properties for these experiments.
+The ODROID-XU3 is a new single-board computing system depicted in Figure \ref{ODROIDImage}, offering interesting properties for these experiments.
 The system has an Exynos 5422 heterogeneous SoC.
 Exynos 5422 has a quad core ARM Cortex-A15 CPU and a ARM Mali-T628 GPU, but also a smaller quad core ARM Cortex-A7 processor.
 These 3 different processing units can be used simultaneously to solve problems.
-They use ARMs big.LITTLE architecture to achieve this heterogeneous cooperation.
+They use ARMs big.LITTLE architecture, described in section \ref{bigLITTLE}, to achieve this heterogeneous cooperation.
 In this paper, and the planned master thesis following it, the potency of this kind of heterogeneous processor will be explored.
 This is the system that will run most of the experiments, including all energy efficiency experiments.
+In Table \ref{ODROIDspec} the system specifications of the board are listed.
 
 \begin{table}[H]
+  \centering
   \begin{tabular}{ll}
     \toprule
     \textbf{SoC}              & Samsung Exynos 5422 \\
@@ -187,7 +193,7 @@ This is the system that will run most of the experiments, including all energy e
     Version                   & 3.10.54+ \\
     \bottomrule
   \end{tabular}
-  \caption{ODROID-XU3 specifications\label{overflow}}
+  \caption{ODROID-XU3 specifications\label{ODROIDspec}}
 \end{table}
 
 \subsubsection{Power monitoring}
@@ -224,9 +230,11 @@ This mean that problems with parallel parts, can be solved efficiently utilizing
 
 \subsection{ARM Cortex-A15}
 The ARM Cortex-A15 is a high performance processor core designed for use in a wide range of applications, from small embedded systems, to larger consumer electronics.
+The specifications of the core are listed in Table \ref{A15}.
 This processor core is present in both the Arndale Board and the ODROID-XU3, who have 2 and 4 such cores respectively.
 In the latter, 4 smaller ARM Cortex-A7 cores are also featured, and all can be used simultaneously.
 \begin{table}[H]
+  \centering
   \begin{tabular}{ll}
     \toprule
     Frequency         & 1.0 GHz to 2.5GHz  \\
@@ -249,13 +257,15 @@ In the latter, 4 smaller ARM Cortex-A7 cores are also featured, and all can be u
     Memory management & 40-bit ARMv7 Memory Management Unit \\
     \bottomrule
   \end{tabular}
-  \caption{ARM Cortex-A15 specifications\label{overflow}}
+  \caption{ARM Cortex-A15 specifications\label{A15}}
 \end{table}
 \subsection{ARM Cortex-A7}
 The ARM Cortex-A7 is designed to be a low power alternative to the ARM Cortex-A15 and ARM Cortex-A17, with the same supported ISA and features.
+The specifications of the core are listed in Table \ref{A7}.
 This enable the ARM Cortex-A7 to be paired with it's larger relatives in a ARM big.LITTLE configuration.
 The Exynos 5422 SoC on the ODROID-XU3 board feature 4 of these cores.
 \begin{table}[H]
+  \centering
   \begin{tabular}{ll}
     \toprule
     Frequency         & 1.2 GHz to 1.6GHz  \\
@@ -279,12 +289,14 @@ The Exynos 5422 SoC on the ODROID-XU3 board feature 4 of these cores.
     Memory management & 40-bit ARMv7 Memory Management Unit \\
     \bottomrule
   \end{tabular}
-  \caption{ARM Cortex-A7 specifications\label{overflow}}
+  \caption{ARM Cortex-A7 specifications\label{A7}}
 \end{table}
 \subsection{ARM Mali-T604}
 This is a high performance low power mobile GPU.
+The specifications of the GPU are listed in Table \ref{T604}.
 The Arndale Board feature one of these in it's Exynos 5250 SoC.
 \begin{table}[H]
+  \centering
   \begin{tabular}{ll}
     \toprule
     Frequency         & 533 MHz\\
@@ -303,13 +315,15 @@ The Arndale Board feature one of these in it's Exynos 5250 SoC.
     Cache             & 32-256KB L2 cache \\
     \bottomrule
   \end{tabular}
-  \caption{ARM Mali-T604 specifications\label{overflow}}
+  \caption{ARM Mali-T604 specifications\label{T604}}
 \end{table}
 
 \subsection{ARM Mali-T628}
 This is a high performance low power mobile GPU.
+The specifications of the GPU are listed in Table \ref{T628}.
 The ODROID-XU3 board feature one of these in it's Exynos 5244 SoC.
 \begin{table}[H]
+  \centering
   \begin{tabular}{ll}
     \toprule
     Frequency         & 533/695 MHz \\
@@ -328,7 +342,7 @@ The ODROID-XU3 board feature one of these in it's Exynos 5244 SoC.
     Cache             & 32-256KB L2 cache \\
     \bottomrule
   \end{tabular}
-  \caption{ARM Mali-T628 specifications\label{overflow}}
+  \caption{ARM Mali-T628 specifications\label{T628}}
 \end{table}
 
 \section{2D-Convolution}
@@ -339,7 +353,7 @@ An example is computer vision, which can use convolutions to filter data.
 Use an image as the first input and a sobel filter as the second.
 The output would then be an image with all emphasized.
 
-2D-Convolution on discrete input data will have an output with each pixel [m,n] defined as:
+2D-Convolution on discrete input data will have an output with each pixel [m,n] defined as \cite{lillesand13}:
 
 \begin{equation} \label{eq:2dconvolutionpixel}
   y[m,n] = x[m,n] \times h[m,n] = \sum\limits_{j=-\infty}^\infty \sum\limits_{i=-\infty}^\infty input[i,j] \times filter[1-i, 1-j]
@@ -351,12 +365,12 @@ This computation for each pixel or small group of pixels can made a task in OmpS
 
 In the implementation of 2D-Convolution used in this project, Equation \ref{eq:2dconvolutionpixel} is run for each pixel in the input image.
 The limits are set to the size of the input.
-This result Equation \ref{eq:2dconvolution}.
+This result Equation \ref{eq:2dconvolution} \cite{lillesand13}.
 
 \begin{equation} \label{eq:2dconvolution}
   Y = X \times H = \sum\limits_{m=0}^W \sum\limits_{n=0}^H \sum\limits_{j=0}^{w} \sum\limits_{i=0}^{h} input[i,j] \times filter[1-i, 1-j]
 \end{equation}
 
 The 4 loops in Equation \ref{eq:2dconvolution} show that the number of operations in this problem is $W\times H\times w\times h$.
-This is a time complexity of $\mathcal{O}(n^4)$ when W=H=w=h%\cite{PrinciplesOfDigitalImage}. %cite nr. 52 in Tronds report
+This is a time complexity of $\mathcal{O}(n^4)$ when W=H=w=h \cite{burger09}.
 

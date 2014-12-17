@@ -25,7 +25,7 @@ Because of this, experiments were run on all the processor configurations that w
 \begin{figure}[H]
   \centering
   \includegraphics[width=160mm]{fig/loop-unroll-execution-time.eps}
-  \caption{Execution time of 2D-Convolution with different degrees of loop unrolling running on different processor configurations. \label{overflow}}
+  \caption{Execution time of 2D-Convolution with different degrees of loop unrolling running on different processor configurations. \label{unrollgraph}}
 \end{figure}
 \begin{table}[H]
   \begin{tabular}{llllll}
@@ -40,10 +40,10 @@ Because of this, experiments were run on all the processor configurations that w
     1x Cortex-A7                      & 267.8882            & 247.8783  & 232.5777  & 229.3884  & 279.1135 \\
     \bottomrule
   \end{tabular}
-  \caption{Execution time of 2D-Convolution with different degrees of loop unrolling on different processor configurations. \label{overflow}}
+  \caption{Execution time of 2D-Convolution with different degrees of loop unrolling on different processor configurations. \label{unrolltable}}
 \end{table}
 
-The results show that a loop unroll degree of 8 was optimal for this specific implementation of 2D-Convolution on ODROID-XU3.
+The results in Figure \ref{unrollgraph} and Table \ref{unrolltable} show that a loop unroll degree of 8 was optimal for this specific implementation of 2D-Convolution on ODROID-XU3.
 This was observed across the results with all tested processor configurations.
 Because of this result, the remaining experiments are all run with a loop unroll degree of 8.
 
@@ -60,18 +60,17 @@ Even with energy efficiency as the focus, performance data are still interesting
 The data are both useful on their own to observe the power of the system, as well as being a way to compare energy results.
 When the energy efficiency of a system is measured, it is important to look at the energy data of the system in light of it's computational power.
 A system consuming low amounts of power is not as impressive if it is equally low performing.
-These are the results of running 2D-Convolution with 8 as the loop unroll on different processor configurations.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=160mm]{fig/execution-time-configurations.eps}
-  \caption{Execution time of 2D-Convolution on different processor configurations. All results are from ODROID-XU3 were nothing is specified. The Arndale Board is running at both it's ARM Cortex-A15 cores. The ARM Cortex-A15 cores of the ODROID-XU3 are running at 2.0 GHz, while they are running at 1.7 GHz on the Arndale Board. \label{overflow}}
+  \caption{Execution time of 2D-Convolution on different processor configurations. All results are from ODROID-XU3 were nothing is specified. The Arndale Board is running at both it's ARM Cortex-A15 cores. The ARM Cortex-A15 cores of the ODROID-XU3 are running at 2.0 GHz, while they are running at 1.7 GHz on the Arndale Board. \label{execution-time-configurations}}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=160mm]{fig/mpixelss-configurations.eps}
-  \caption{MPixels/s of 2D-Convolution running on different processor configurations. All results are from ODROID-XU3 were nothing is specified. The Arndale Board is running at both it's ARM Cortex-A15 cores. The ARM Cortex-A15 cores of the ODROID-XU3 are running at 2.0 GHz, while they are running at 1.7 GHz on the Arndale Board. \label{overflow}}
+  \caption{MPixels/s of 2D-Convolution running on different processor configurations. All results are from ODROID-XU3 were nothing is specified. The Arndale Board is running at both it's ARM Cortex-A15 cores. The ARM Cortex-A15 cores of the ODROID-XU3 are running at 2.0 GHz, while they are running at 1.7 GHz on the Arndale Board. \label{mpixelss-configurations}}
 \end{figure}
 
 \begin{table}[H]
@@ -87,9 +86,10 @@ These are the results of running 2D-Convolution with 8 as the loop unroll on dif
     Arndale Board with 2x Cortex-A15    & 46.3942             & 1.4465\\
     \bottomrule
   \end{tabular}
-  \caption{Performance of 2D-Convolution with different processor configurations. All results are from ODROID-XU3 were nothing is specified. The ARM Cortex-A15 cores of the ODROID-XU3 are running at 2.0 GHz, while they are running at 1.7 GHz on the Arndale Board. \label{overflow}}
+  \caption{Performance of 2D-Convolution with different processor configurations. All results are from ODROID-XU3 were nothing is specified. The ARM Cortex-A15 cores of the ODROID-XU3 are running at 2.0 GHz, while they are running at 1.7 GHz on the Arndale Board. \label{performancetable}}
 \end{table}
 
+In Figure \ref{execution-time-configurations}, Figure \ref{mpixelss-configurations} and Table \ref{performancetable} the results of running 2D-Convolution with a loop unroll degree of 8 of different processor configurations are presented.
 As was to be expected, the large cores perform a lot better than the small ones.
 Running the system with all 8 cores powered perform 3.7 times better than the small cores alone.
 This is a large performance trade off, but the small cores are still useful if they have a low enough power consumption.
@@ -143,7 +143,7 @@ For the rest of the execution there are variations in power consumption, but the
 
 \section{Average power measurements}
 Using the data gathered for each component in different processor configurations we can examine their efficiency.
-These data are presented in Figure \ref{power-configurations}.
+These data are presented in Figure \ref{power-configurations} and Table \ref{power-configurations-table}.
 \begin{figure}[H]
   \centering
   \includegraphics[width=160mm]{fig/power-configurations.eps}
@@ -163,7 +163,7 @@ These data are presented in Figure \ref{power-configurations}.
     1x Cortex-A7                    & 0.1197          & 0.2535        & 0.0813        & 0.0709  & 0.5256 \\
     \bottomrule
   \end{tabular}
-  \caption{Execution time of 2D-Convolution with different degrees of loop unrolling on different processor configurations. \label{overflow}}
+  \caption{Execution time of 2D-Convolution with different degrees of loop unrolling on different processor configurations. \label{power-configurations-table}}
 \end{table}
 
 As expected we see that the power of the ARM Cortex-A7s is a lot lower than the power of the ARM Cortex-A15.
@@ -221,10 +221,10 @@ These are the energy data from chapter \ref{energyconsumptionmeasurements} multi
 \begin{figure}[H]
   \centering
   \includegraphics[width=160mm]{fig/EDP-configurations.eps}
-  \caption{Energy delay product after execution the whole 2D-Convolution program with different processor configurations. Note that the EDP of the ARM Cortex-A7 goes beyond the scale of the graph with a value of 27658, to allow for better readability. The colors indicate different components, and the full height of each column is the accumulated energy delay product for the whole system.\label{overflow}} \label {EDP-configurations}
+  \caption{Energy delay product after execution the whole 2D-Convolution program with different processor configurations. Note that the EDP of the ARM Cortex-A7 goes beyond the scale of the graph with a value of 27658, to allow for better readability. The colors indicate different components, and the full height of each column is the accumulated energy delay product for the whole system.\label{EDP-graph}}
 \end{figure}
 
-These data clearly show that with energy delay product as out goal, running the fully powered system achieve the best results.
+The data in Figure \ref{EDP-graph} clearly show that with energy delay product as out goal, running the fully powered system achieve the best results.
 The energy efficiency gain by switching to the smaller and more energy efficient processors, is not worth the performance trade off.
 This mean that for applications which require a balanced performance trade off, the more energy efficient Cortex-A7 cores will not be a great alternative in most cases.
 
