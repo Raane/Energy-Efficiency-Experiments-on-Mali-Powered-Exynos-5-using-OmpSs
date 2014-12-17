@@ -65,13 +65,13 @@ These are the results of running 2D-Convolution with 8 as the loop unroll on dif
 \begin{figure}[H]
   \centering
   \includegraphics[width=160mm]{fig/execution-time-configurations.eps}
-  \caption{Execution time of 2D-Convolution on different processor configurations. All results are from ODROID-XU3 were nothing is specified. The Arndale Duo is running at both it's ARM Cortex-A15 cores. The ARM Cortex-A15 cores of the ODROID-XU3 are running at 2.0 GHz, while they are running at 1.7 GHz on the Arndale Duo. \label{overflow}}
+  \caption{Execution time of 2D-Convolution on different processor configurations. All results are from ODROID-XU3 were nothing is specified. The Arndale Board is running at both it's ARM Cortex-A15 cores. The ARM Cortex-A15 cores of the ODROID-XU3 are running at 2.0 GHz, while they are running at 1.7 GHz on the Arndale Board. \label{overflow}}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=160mm]{fig/mpixelss-configurations.eps}
-  \caption{MPixels/s of 2D-Convolution running on different processor configurations. All results are from ODROID-XU3 were nothing is specified. The Arndale Duo is running at both it's ARM Cortex-A15 cores. The ARM Cortex-A15 cores of the ODROID-XU3 are running at 2.0 GHz, while they are running at 1.7 GHz on the Arndale Duo. \label{overflow}}
+  \caption{MPixels/s of 2D-Convolution running on different processor configurations. All results are from ODROID-XU3 were nothing is specified. The Arndale Board is running at both it's ARM Cortex-A15 cores. The ARM Cortex-A15 cores of the ODROID-XU3 are running at 2.0 GHz, while they are running at 1.7 GHz on the Arndale Board. \label{overflow}}
 \end{figure}
 
 \begin{table}[H]
@@ -84,10 +84,10 @@ These are the results of running 2D-Convolution with 8 as the loop unroll on dif
     1x Cortex-A7 and 4x Cortex-A15    & 16.1658             & 4.1512\\
     1x Cortex-A7 and 1x Cortex-A15    & 41.1286             & 1.6316\\
     1x Cortex-A7                      & 229.3884            & 0.2925\\
-    Arndale Duo with 2x Cortex-A15    & 46.3942             & 1.4465\\
+    Arndale Board with 2x Cortex-A15    & 46.3942             & 1.4465\\
     \bottomrule
   \end{tabular}
-  \caption{Performance of 2D-Convolution with different processor configurations. All results are from ODROID-XU3 were nothing is specified. The ARM Cortex-A15 cores of the ODROID-XU3 are running at 2.0 GHz, while they are running at 1.7 GHz on the Arndale Duo. \label{overflow}}
+  \caption{Performance of 2D-Convolution with different processor configurations. All results are from ODROID-XU3 were nothing is specified. The ARM Cortex-A15 cores of the ODROID-XU3 are running at 2.0 GHz, while they are running at 1.7 GHz on the Arndale Board. \label{overflow}}
 \end{table}
 
 As was to be expected, the large cores perform a lot better than the small ones.
@@ -111,7 +111,7 @@ This may also be a result of the other tasks the operating system is running.
 With less processing power available, the fraction of time spent running the operating system increase.
 Because of this, there is reason to suspect that the small cores don't really scale as well as the results indicate.
 
-The performance experiments run on the older Arndale Duo board show that it have worse performance with its ARM Cortex-A15 cores than the ODROID-XU3.
+The performance experiments run on the older Arndale Board show that it have worse performance with its ARM Cortex-A15 cores than the ODROID-XU3.
 The two high power cores on the Arndale board have lower performance than a low power and a high power processor on the ODROID board.
 If we assume linear scaling and extrapolate, we see that a quad core ARM Cortex-A15 with Arndale specifications would reach a performance of 2.9 MPixels/s.
 On the ODROID-XU3, the similar setup with 4 ARM Cortex-A15 cores and an ARM Cortex-A7 core, had a performance of 4.2 MPixels/s.
@@ -120,7 +120,7 @@ This performance difference is not surprising, as the Arndales cores run at a lo
 They are also paired with slower memory, which may also contribute to the lower performance.
 
 \section{Power measurements}
-As described in chapter \fullref{setupandmethodology}, separate energy measurements for the different SoC components were gathered during execution of the experiments.
+As described in chapter \ref{setupandmethodology}, separate energy measurements for the different SoC components were gathered during execution of the experiments.
 Each of the 4 components value was logged every 200 ms.
 Figure \ref{powerovertime} show the raw energy measurements for a single execution of 2D-Convolution running on all 8 processors.
 We can here observe the energy consumption of the program throughout the execution for different components.
@@ -141,7 +141,7 @@ For the rest of the execution there are variations in power consumption, but the
 
 \section{Average power measurements}
 Using the data gathered for each component in different processor configurations we can examine their efficiency.
-These data are presented in figure \ref{power-configurations}.
+These data are presented in Figure \ref{power-configurations}.
 \begin{figure}[H]
   \centering
   \includegraphics[width=160mm]{fig/power-configurations.eps}
@@ -181,13 +181,13 @@ These results reveal that the energy for each set of cores are not spent solely 
 These peripheral components can not be turned partially of, and will consume some power when at least one core is on.
 They even consume some power when the cores are all off.
 Because of this overhead power from partially powered processors, there rarely occur situations where this is optimal.
-The results for such processor configurations will be analyzed further in this thesis to observe whether or not this is the case here.
+The results for such processor configurations will be analyzed further in this project to observe whether or not this is the case here.
 
 \section{Energy consumption measurements}A \label{energyconsumptionmeasurements}
 The power usage of the different system components is interesting.
 There is however many cases where the system can be put to another task, or shut down, when it is finished.
 In such cases it is interesting to observe the total amount of energy consumed completing the task.
-In figure \ref{power-consumed-configurations} the data for each component power usage is multiplied with the execution time.
+In Figure \ref{power-consumed-configurations} the data for each component power usage is multiplied with the execution time.
 The data height of each column is the amount of energy consumed.
 
 \begin{figure}[H]
@@ -213,7 +213,7 @@ They are however not promising candidates for general applications.
 
 \section{Energy Delay Product (EDP) measurements} \label{EDP}
 While the energy consumption is a good energy measure in many situations, it is often interesting to compare the energy consumed with it's performance trade off.
-As explained in section \fullref{energymeasurement} energy delay product measurements can be used to examine this trade off.
+As explained in section \ref{energymeasurement} energy delay product measurements can be used to examine this trade off.
 These are the energy data from chapter \ref{energyconsumptionmeasurements} multiplied with the execution time of the respective application execution.
 
 \begin{figure}[H]

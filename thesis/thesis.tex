@@ -19,6 +19,9 @@
 
 \setlength{\heavyrulewidth}{1.5pt}
 
+\widowpenalty10000
+\clubpenalty10000
+
 \newcommand*{\fullref}[1]{\hyperref[{#1}]{\ref*{#1} \nameref*{#1}}} % One single link
 
 \restylefloat{table}
@@ -53,7 +56,7 @@
 % Include more chapters as required.
 %%=========================================
 \appendix
-\include{appendix-code}
+%\include{appendix-code}
 % Include more appendices as required.
 %%=========================================
 \bibliographystyle{unsrt}

@@ -11,7 +11,7 @@ The programmer can not affect how large these values are.
 What can be done however, is to ensure that the software does not consume energy unnecessary.
 Some of the components in the system that are not used, can be turned off.
 Some of the features of a processor may also cause it to consume more power.
-An example is NEON vector instructions, which have been shown to increase the power usage of the system by up to 20\%\cite{TrondIngeLillesand} when used.
+An example is NEON vector instructions, which have been shown to increase the power usage of the system by up to 20\%%\cite{TrondIngeLillesand} when used.
 Turning off components or features does save power, but there will often be a performance loss.
 When energy efficiency is a goal, there is always questions about how much power can be saved, before the execution time is extended so much that there is a total loss in energy consumed.
 Because of this, it is interesting to analyze programs with regard to energy consumption.
@@ -47,7 +47,7 @@ This will often open for great performance boost on problems like the one explor
 Each register may be filled with single precision floating point numbers ranging from 8 to 64-bit each.
 This mean that the programmer may choose to fill them with 16 8-bit numbers, 8 16-bit numbers, 4 32-bit numbers, 2 64-bit numbers or a single 128-bit number.
 This allows a single thread to achieve parallelism.
-In future generations of the ARM ISA there will be support for other data types as well \cite{This need to be cited}.
+In future generations of the ARM ISA there will be support for other data types as well %\cite{This need to be cited}.
 Different implementations of NEON exist in the Cortex-A cores.
 While the even the simple implementations in smaller cores like the Cortex-A7 can give great performance boost, the implementations present in the newest cores are performing even better.
 The A15 offer two NEON units, and the instruction pipeline to start the cores are shorter than in simpler implementations.
@@ -89,12 +89,12 @@ Both regular programs and operating systems can demand changes to be able to uti
 \begin{figure}[ht!]
   \centering
   \includegraphics[width=90mm]{fig/Arendale.jpg}
-  \caption{Arndale Duo \label{overflow}}
+  \caption{Arndale Board \label{overflow}}
 \end{figure}
-The Arndale Duo is a computing system mounted on a single board.
+The Arndale Board is a computing system mounted on a single board.
 It is fitted with an Exynos 5250 SoC, which contain a dual core ARM Cortex-A15 , as well as an ARM Mali-T604 GPU.
 This computer offer a range of supported Linux distributions, as well as the OmpSs programming model.
-The Arndale Duo board was used for some preliminary research in this thesis.
+The Arndale Board was used for some preliminary research in this project.
 It was chosen because we had experience from earlier student projects using this board.
 The computer was used in the 2014 master thesis "Acceleration with OmpSs and Neon/OpenCL on ARM Processor" by Trond Inge Lillesand.
 The thesis lay a lot of the foundation for this pilot project and planned master thesis.
@@ -125,7 +125,7 @@ The thesis lay a lot of the foundation for this pilot project and planned master
     %Version                   & TODO \\
     \bottomrule
   \end{tabular}
-  \caption{Arndale Duo specifications\label{overflow}}
+  \caption{Arndale Board specifications\label{overflow}}
 \end{table}
 
 \subsection{ODROID-XU3} \label{OdroidXU3}
@@ -182,7 +182,7 @@ This is the system that will run most of the experiments, including all energy e
 \subsubsection{Power monitoring}
 The ODROID-XU3 comes with integrated power monitoring tools.
 Implemented in hardware, it has got 4 current sensors sitting on the power pins of the Exynos SoC.
-The energy monitors are indicated in figure \ref{overview-odroid}.
+The energy monitors are indicated in Figure \ref{overview-odroid}.
 These monitor the current going through the large CPU cores, the small CPU cores, memory and GPU respectively.
 In addition to the current sensors, the power management for the SoC is also available to the programmer, making supply voltage to the components known.
 By using the voltage and current, the power consumption is known.
@@ -203,7 +203,7 @@ There is 2GB of memory available running at 800 MHz, and the ARM Mali-T628 GPU r
 This performance place it at the higher end of SoCs, but not quite in the top, as it is beaten by systems like TODO A reference system here).
 The ODROID-XU3 feature the new eMMC 5.0 standard for storage.
 The performance of this standard outperform both older eMMC standards, as well as memory card readers, which other similar systems may contain.
-The ODROID-XU3 can achieve a read/write performance of 198/74 MB/s\cite{hardkernel01}, which a lot better than older systems like the Arndale Duo.
+The ODROID-XU3 can achieve a read/write performance of 198/74 MB/s\cite{hardkernel01}, which a lot better than older systems like the Arndale Board.
 
 In addition to the eight processor cores, the system also feature a ARM Mali-T628.
 The Mali-T628 function both as a regular GPU, as well as a GPGPU.
@@ -213,7 +213,7 @@ This mean that problems with parallel parts, can be solved efficiently utilizing
 
 \subsection{ARM Cortex-A15}
 The ARM Cortex-A15 is a high performance processor core designed for use in a wide range of applications, from small embedded systems, to larger consumer electronics.
-This processor core is present in both the Arndale Duo and the ODROID-XU3, who have 2 and 4 such cores respectively.
+This processor core is present in both the Arndale Board and the ODROID-XU3, who have 2 and 4 such cores respectively.
 In the latter, 4 smaller ARM Cortex-A7 cores are also featured, and all can be used simultaneously.
 \begin{table}[H]
   \begin{tabular}{ll}
@@ -235,7 +235,7 @@ In the latter, 4 smaller ARM Cortex-A7 cores are also featured, and all can be u
                       & Fused MAC \\
                       & Hypervisor debug instructions \\
     \midrule
-    Memory management & 40-bit ARMv7 Memory Management Unit
+    Memory management & 40-bit ARMv7 Memory Management Unit \\
     \bottomrule
   \end{tabular}
   \caption{ARM Cortex-A15 specifications\label{overflow}}
@@ -265,14 +265,14 @@ The Exynos 5422 SoC on the ODROID-XU3 board feature 4 of these cores.
                       & Fused MAC \\
                       & Hypervisor debug instructions \\
     \midrule
-    Memory management & 40-bit ARMv7 Memory Management Unit
+    Memory management & 40-bit ARMv7 Memory Management Unit \\
     \bottomrule
   \end{tabular}
   \caption{ARM Cortex-A7 specifications\label{overflow}}
 \end{table}
 \subsection{ARM Mali-T604}
 This is a high performance low power mobile GPU.
-The Arndale Duo board feature one of these in it's Exynos 5250 SoC.
+The Arndale Board feature one of these in it's Exynos 5250 SoC.
 \begin{table}[H]
   \begin{tabular}{ll}
     \toprule
@@ -289,7 +289,7 @@ The Arndale Duo board feature one of these in it's Exynos 5250 SoC.
     Anti-Aliasing     & 4xFSAA with minimal performance drop  \\
                       & 16xFSAA  \\
     \midrule
-    Cache             & 32-256KB L2 cache
+    Cache             & 32-256KB L2 cache \\
     \bottomrule
   \end{tabular}
   \caption{ARM Mali-T604 specifications\label{overflow}}
@@ -314,7 +314,7 @@ The ODROID-XU3 board feature one of these in it's Exynos 5244 SoC.
     Anti-Aliasing     & 4xFSAA with minimal performance drop  \\
                       & 16xFSAA  \\
     \midrule
-    Cache             & 32-256KB L2 cache
+    Cache             & 32-256KB L2 cache \\
     \bottomrule
   \end{tabular}
   \caption{ARM Mali-T628 specifications\label{overflow}}
@@ -338,7 +338,7 @@ The limits are in reality smaller than $\infty$ as they can be set to the size o
 2D-Convolution is convenient for this paper, as each pixel of the output is independent.
 This computation for each pixel or small group of pixels can made a task in OmpSs.
 
-In the implementation of 2D-Convolution used in this thesis, Equation \ref{eq:2dconvolutionpixel} is run for each pixel in the input image.
+In the implementation of 2D-Convolution used in this project, Equation \ref{eq:2dconvolutionpixel} is run for each pixel in the input image.
 The limits are set to the size of the input.
 This result Equation \ref{eq:2dconvolution}.
 
@@ -346,6 +346,6 @@ This result Equation \ref{eq:2dconvolution}.
   Y = X \times H = \sum\limits_{m=0}^W \sum\limits_{n=0}^H \sum\limits_{j=0}^{w} \sum\limits_{i=0}^{h} input[i,j] \times filter[1-i, 1-j]
 \end{equation}
 
-The 4 loops in equation \ref{eq:2dconvolution} show that the number of operations in this problem is $W\times H\times w\times h$.
-This is a time complexity of $\mathcal{O}(n^4)$ when W=H=w=h\cite{PrinciplesOfDigitalImage}. %cite nr. 52 in Tronds report
+The 4 loops in Equation \ref{eq:2dconvolution} show that the number of operations in this problem is $W\times H\times w\times h$.
+This is a time complexity of $\mathcal{O}(n^4)$ when W=H=w=h%\cite{PrinciplesOfDigitalImage}. %cite nr. 52 in Tronds report
 
